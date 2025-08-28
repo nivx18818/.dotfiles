@@ -1,0 +1,99 @@
+;; kanata.kbd
+
+;; =========================
+;; Config
+;; =========================
+
+(defcfg
+  process-unmapped-key yes
+)
+
+;; =========================
+;; Sources
+;; =========================
+
+(defsrc
+  a s d f
+  j k l ;
+)
+
+;; =========================
+;; Variables
+;; =========================
+(defvar tap-timeout 150)   ;; max ms for a tap
+(defvar hold-timeout 200)  ;; min ms to confirm hold
+
+;; =========================
+;; Alias
+;; =========================
+
+;; Aliases for home row mods
+(defalias
+  hrm-a (tap-hold $tap-timeout $hold-timeout a lmet)
+  hrm-s (tap-hold $tap-timeout $hold-timeout s lalt)
+  hrm-d (tap-hold $tap-timeout $hold-timeout d lshift)
+  hrm-f (tap-hold $tap-timeout $hold-timeout f lctrl)
+
+  hrm-j (tap-hold $tap-timeout $hold-timeout j rctrl)
+  hrm-k (tap-hold $tap-timeout $hold-timeout k rshift)
+  hrm-l (tap-hold $tap-timeout $hold-timeout l ralt)
+  hrm-; (tap-hold $tap-timeout $hold-timeout ; rmet)
+)
+
+;; =========================
+;; Layers
+;; =========================
+
+(deflayer base
+  ;; Base gaming layer
+  caps esc
+
+  ;; Toggles
+  (caps h) (layer-toggle hrm)
+  (caps n) (layer-toggle nav)
+)
+
+(deflayer hrm
+  ;; Home row mods
+  @hrm-a
+  @hrm-s
+  @hrm-d
+  @hrm-f
+
+  @hrm-j
+  @hrm-k
+  @hrm-l
+  @hrm-;
+
+  caps esc
+
+  ;; Allow toggling back and forth
+  (caps b) (layer-toggle base)
+  (caps n) (layer-toggle nav)
+)
+
+(deflayer nav
+  ;; Navigation + HRM
+  h left
+  j down
+  k up
+  l right
+
+  ;; Extra nav cluster
+  u pgup
+  o pgdn
+  y home
+  p end
+
+  ;; Home row mods still active
+  @hrm-a
+  @hrm-s
+  @hrm-d
+  @hrm-f
+
+  caps esc
+
+  ;; Allow toggling back and forth
+  (caps h) (layer-toggle hrm)
+  (caps b) (layer-toggle base)
+)
