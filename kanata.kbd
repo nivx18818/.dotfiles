@@ -1,20 +1,20 @@
-;; kanata.kbd
-
 ;; =========================
 ;; Config
 ;; =========================
 
 (defcfg
-  process-unmapped-key yes
+  process-unmapped-keys yes
 )
 
 ;; =========================
 ;; Sources
 ;; =========================
-
 (defsrc
-  a s d f
-  j k l ;
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 ;; =========================
@@ -44,35 +44,34 @@
 ;; Layers
 ;; =========================
 
-(deflayer base
+(deflayermap (base)
   ;; Base gaming layer
   caps esc
 
   ;; Toggles
-  (caps h) (layer-toggle hrm)
-  (caps n) (layer-toggle nav)
+  tab  (tap-hold $tap-timeout $hold-timeout tab (layer-switch hrm))
 )
 
-(deflayer hrm
+(deflayermap (hrm)
   ;; Home row mods
-  @hrm-a
-  @hrm-s
-  @hrm-d
-  @hrm-f
+  a @hrm-a
+  s @hrm-s
+  d @hrm-d
+  f @hrm-f
 
-  @hrm-j
-  @hrm-k
-  @hrm-l
-  @hrm-;
+  j @hrm-j
+  k @hrm-k
+  l @hrm-l
+  ; @hrm-;
 
   caps esc
 
   ;; Allow toggling back and forth
-  (caps b) (layer-toggle base)
-  (caps n) (layer-toggle nav)
+  tab  (tap-hold $tap-timeout $hold-timeout tab (layer-switch base))
+  spc  (tap-hold $tap-timeout $hold-timeout spc (layer-while-held nav))
 )
 
-(deflayer nav
+(deflayermap (nav)
   ;; Navigation + HRM
   h left
   j down
@@ -86,14 +85,10 @@
   p end
 
   ;; Home row mods still active
-  @hrm-a
-  @hrm-s
-  @hrm-d
-  @hrm-f
+  a @hrm-a
+  s @hrm-s
+  d @hrm-d
+  f @hrm-f
 
   caps esc
-
-  ;; Allow toggling back and forth
-  (caps h) (layer-toggle hrm)
-  (caps b) (layer-toggle base)
 )
