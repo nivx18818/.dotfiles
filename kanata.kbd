@@ -4,6 +4,8 @@
 
 (defcfg
   process-unmapped-keys yes
+  concurrent-tap-hold yes
+  chords-v2-min-idle 50
 )
 
 ;; =========================
@@ -14,14 +16,25 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  lctl lmet lalt           spc            ralt fn   rctl
 )
 
 ;; =========================
 ;; Variables
 ;; =========================
-(defvar tap-timeout 150)   ;; max ms for a tap
+
+(defvar tap-timeout 80)   ;; max ms for a tap
 (defvar hold-timeout 200)  ;; min ms to confirm hold
+
+;; =========================
+;; Chords
+;; =========================
+
+(defchordsv2
+  (spc h) (layer-switch hrm) 80 first-release ()
+  (spc b) (layer-switch base) 80 first-release ()
+  (spc n) (layer-switch nav) 80 first-release ()
+)
 
 ;; =========================
 ;; Alias
@@ -38,6 +51,9 @@
   hrm-k (tap-hold $tap-timeout $hold-timeout k rshift)
   hrm-l (tap-hold $tap-timeout $hold-timeout l ralt)
   hrm-; (tap-hold $tap-timeout $hold-timeout ; rmet)
+
+  mac-c (tap-hold $tap-timeout $hold-timeout c C-c)
+  mac-v (tap-hold $tap-timeout $hold-timeout v C-v)
 )
 
 ;; =========================
@@ -49,7 +65,7 @@
   caps esc
 
   ;; Toggles
-  tab  (tap-hold $tap-timeout $hold-timeout tab (layer-switch hrm))
+  spc (tap-hold $tap-timeout $hold-timeout spc (layer-switch hrm))
 )
 
 (deflayermap (hrm)
@@ -64,11 +80,14 @@
   l @hrm-l
   ; @hrm-;
 
+  c @mac-c
+  v @mac-v
+
   caps esc
 
   ;; Allow toggling back and forth
-  tab  (tap-hold $tap-timeout $hold-timeout tab (layer-switch base))
-  spc  (tap-hold $tap-timeout $hold-timeout spc (layer-while-held nav))
+  spc  (tap-hold $tap-timeout $hold-timeout spc (layer-switch base))
+  .  (tap-hold $tap-timeout $hold-timeout . (layer-while-held nav))
 )
 
 (deflayermap (nav)
@@ -89,6 +108,9 @@
   s @hrm-s
   d @hrm-d
   f @hrm-f
+
+  c @mac-c
+  v @mac-v
 
   caps esc
 )
