@@ -12,28 +12,32 @@
 ;; Sources
 ;; =========================
 (defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt fn   rctl
+  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+  grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
+  caps   a      s      d      f      g      h      j      k      l      ;      '      ret
+  lsft   z      x      c      v      b      n      m      ,      .      /      rsft
+  lctl   lmet   lalt                 spc           ralt          rctl
 )
 
 ;; =========================
 ;; Variables
 ;; =========================
 
-(defvar tap-timeout 80)   ;; max ms for a tap
-(defvar hold-timeout 200)  ;; min ms to confirm hold
+(defvar
+  tap-timeout 200
+  hold-timeout 200
+  chord-timeout 60
+)
 
 ;; =========================
 ;; Chords
 ;; =========================
 
 (defchordsv2
-  (spc h) (layer-switch hrm) 80 first-release ()
-  (spc b) (layer-switch base) 80 first-release ()
-  (spc n) (layer-switch nav) 80 first-release ()
+  (caps h) (layer-switch hrm) $chord-timeout first-release ()
+  (caps b) (layer-switch base) $chord-timeout first-release ()
+  (caps n) (layer-switch nav) $chord-timeout first-release ()
 )
 
 ;; =========================
@@ -42,75 +46,62 @@
 
 ;; Aliases for home row mods
 (defalias
-  hrm-a (tap-hold $tap-timeout $hold-timeout a lmet)
-  hrm-s (tap-hold $tap-timeout $hold-timeout s lalt)
-  hrm-d (tap-hold $tap-timeout $hold-timeout d lshift)
+  alt-tab-cycle (multi lalt (macro-repeat (tab 500)))
+
+  hrm-a (tap-hold $tap-timeout $hold-timeout a lshift)
+  hrm-s (tap-hold $tap-timeout $hold-timeout s lmet)
+  hrm-d (tap-hold $tap-timeout $hold-timeout d lalt)
   hrm-f (tap-hold $tap-timeout $hold-timeout f lctrl)
 
-  hrm-j (tap-hold $tap-timeout $hold-timeout j rctrl)
-  hrm-k (tap-hold $tap-timeout $hold-timeout k rshift)
-  hrm-l (tap-hold $tap-timeout $hold-timeout l ralt)
-  hrm-; (tap-hold $tap-timeout $hold-timeout ; rmet)
+  hrm-j (tap-hold $tap-timeout $hold-timeout j lctrl)
+  hrm-k (tap-hold $tap-timeout $hold-timeout k lalt)
+  hrm-l (tap-hold $tap-timeout $hold-timeout l lmet)
+  hrm-; (tap-hold $tap-timeout $hold-timeout ; lshift)
 
-  mac-c (tap-hold $tap-timeout $hold-timeout c C-c)
-  mac-v (tap-hold $tap-timeout $hold-timeout v C-v)
+  mod-c (tap-hold $tap-timeout $hold-timeout c C-c)
+  mod-v (tap-hold $tap-timeout $hold-timeout v C-v)
+  mod-z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
+  m-spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
+
+  l-hrm (layer-switch hrm)
 )
 
 ;; =========================
 ;; Layers
 ;; =========================
 
-(deflayermap (base)
-  ;; Base gaming layer
-  caps esc
-
-  ;; Toggles
-  spc (tap-hold $tap-timeout $hold-timeout spc (layer-switch hrm))
+(deflayer hrm
+  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+  grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
+  esc    @hrm-a @hrm-s @hrm-d @hrm-f g      h      @hrm-j @hrm-k @hrm-l @hrm-; '      ret
+  lsft   @mod-z x      @mod-c @mod-v b      n      m      ,      .      /      rsft
+  lctl   lmet   lalt                 @m-spc               ralt          rctl
 )
 
-(deflayermap (hrm)
-  ;; Home row mods
-  a @hrm-a
-  s @hrm-s
-  d @hrm-d
-  f @hrm-f
-
-  j @hrm-j
-  k @hrm-k
-  l @hrm-l
-  ; @hrm-;
-
-  c @mac-c
-  v @mac-v
-
-  caps esc
-
-  ;; Allow toggling back and forth
-  spc  (tap-hold $tap-timeout $hold-timeout spc (layer-switch base))
-  .  (tap-hold $tap-timeout $hold-timeout . (layer-while-held nav))
+(deflayer nav
+  •      •      •      •      •      •      •      •      •      •      •      •      •
+  •      •      •      •      •      •      •      •      •      •      •      •      •      •
+  tab    •      •      •      •      •      •      pgup   up     pgdn   end    •      •      •
+  @l-hrm @hrm-a @hrm-s @hrm-d @hrm-f •      home   left   down   right  •      •      ret
+  lsft   @mod-z •      @mod-c @mod-v •      •      •      •      •      •      rsft
+  lctl   lmet   lalt                 •                    ralt          rctl
 )
 
-(deflayermap (nav)
-  ;; Navigation + HRM
-  h left
-  j down
-  k up
-  l right
+(deflayer num
+  •      •      •      •      •      •      •      •      •      •      •      •      •
+  •      •      •      •      •      •      •      •      •      •      •      •      •      •
+  grv    1      2      3      4      5      6      7      8      9      0      -      =      •
+  •      •      •      •      •      •      •      •      •      •      •      •      •
+  •      •      •      •      •      •      •      •      •      •      •      •
+  •      •      •                    •                    •             •
+)
 
-  ;; Extra nav cluster
-  u pgup
-  o pgdn
-  y home
-  p end
-
-  ;; Home row mods still active
-  a @hrm-a
-  s @hrm-s
-  d @hrm-d
-  f @hrm-f
-
-  c @mac-c
-  v @mac-v
-
-  caps esc
+(deflayer base
+  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+  grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
+  esc    a      s      d      f      g      h      j      k      l      ;      '      ret
+  lsft   z      x      c      v      b      n      m      ,      .      /      rsft
+  lctl   lmet   lalt                 spc           ralt          rctl
 )
