@@ -62,6 +62,7 @@
   mod-v (tap-hold $tap-timeout $hold-timeout v C-v)
   mod-z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
   m-spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
+  m-cap (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
 
   l-hrm (layer-switch hrm)
 )
@@ -74,7 +75,7 @@
   esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
-  esc    @hrm-a @hrm-s @hrm-d @hrm-f g      h      @hrm-j @hrm-k @hrm-l @hrm-; '      ret
+  @m-cap @hrm-a @hrm-s @hrm-d @hrm-f g      h      @hrm-j @hrm-k @hrm-l @hrm-; '      ret
   lsft   @mod-z x      @mod-c @mod-v b      n      m      ,      .      /      rsft
   lctl   lmet   lalt                 @m-spc               ralt          rctl
 )
@@ -82,17 +83,17 @@
 (deflayer nav
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
-  tab    •      •      •      •      •      •      pgup   up     pgdn   end    •      •      •
-  @l-hrm @hrm-a @hrm-s @hrm-d @hrm-f •      home   left   down   right  •      •      ret
-  lsft   @mod-z •      @mod-c @mod-v •      •      •      •      •      •      rsft
-  lctl   lmet   lalt                 •                    ralt          rctl
+  •      •      •      •      •      •      home   pgup   end    pgdn   bspc   •      •      •
+  @l-hrm lsft   lmet   lalt   lctl   •      left   down   up     right  ret    •      •
+  •      •      •      •      •      •      •      •      •      •      del    •
+  •      •      •                    •                    •             •
 )
 
 (deflayer num
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
   grv    1      2      3      4      5      6      7      8      9      0      -      =      •
-  •      •      •      •      •      •      •      •      •      •      •      •      •
+  •      lsft   lmet   lalt   lctl   •      lctl   lalt   lmet   lsft   •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •                    •                    •             •
 )
