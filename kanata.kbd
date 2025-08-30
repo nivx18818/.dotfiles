@@ -48,21 +48,21 @@
 (defalias
   alt-tab-cycle (multi lalt (macro-repeat (tab 500)))
 
-  hrm-a (tap-hold $tap-timeout $hold-timeout a lshift)
-  hrm-s (tap-hold $tap-timeout $hold-timeout s lmet)
-  hrm-d (tap-hold $tap-timeout $hold-timeout d lalt)
-  hrm-f (tap-hold $tap-timeout $hold-timeout f lctrl)
+  a (tap-hold $tap-timeout $hold-timeout a lshift)
+  s (tap-hold $tap-timeout $hold-timeout s lmet)
+  d (tap-hold $tap-timeout $hold-timeout d lalt)
+  f (tap-hold $tap-timeout $hold-timeout f lctrl)
 
-  hrm-j (tap-hold $tap-timeout $hold-timeout j lctrl)
-  hrm-k (tap-hold $tap-timeout $hold-timeout k lalt)
-  hrm-l (tap-hold $tap-timeout $hold-timeout l lmet)
-  hrm-; (tap-hold $tap-timeout $hold-timeout ; lshift)
+  j (tap-hold $tap-timeout $hold-timeout j lctrl)
+  k (tap-hold $tap-timeout $hold-timeout k lalt)
+  l (tap-hold $tap-timeout $hold-timeout l lmet)
+  ; (tap-hold $tap-timeout $hold-timeout ; lshift)
 
-  mod-c (tap-hold $tap-timeout $hold-timeout c C-c)
-  mod-v (tap-hold $tap-timeout $hold-timeout v C-v)
-  mod-z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
-  m-spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
-  m-cap (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
+  c (tap-hold $tap-timeout $hold-timeout c C-c)
+  v (tap-hold $tap-timeout $hold-timeout v C-v)
+  z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
+  spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
+  caps (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
 
   l-hrm (layer-switch hrm)
 )
@@ -75,16 +75,16 @@
   esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
-  @m-cap @hrm-a @hrm-s @hrm-d @hrm-f g      h      @hrm-j @hrm-k @hrm-l @hrm-; '      ret
-  lsft   @mod-z x      @mod-c @mod-v b      n      m      ,      .      /      rsft
-  lctl   lmet   lalt                 @m-spc               ralt          rctl
+  @caps  @a     @s     @d     @f     g      h      @j     @k     @l     @;     '      ret
+  lsft   @z     x      @c     @v     b      n      m      ,      .      /      rsft
+  lctl   lmet   lalt                 @spc                 ralt          rctl
 )
 
 (deflayer nav
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
-  •      •      •      •      •      •      home   pgup   end    pgdn   bspc   •      •      •
-  @l-hrm lsft   lmet   lalt   lctl   •      left   down   up     right  ret    •      •
+  •      •      •      •      •      •      home   pgup   end    pgdn   •      bspc   •      •
+  @l-hrm lsft   lmet   lalt   lctl   •      left   down   up     right  ret    btn1   •
   •      •      •      •      •      •      •      •      •      •      del    •
   •      •      •                    •                    •             •
 )
@@ -93,7 +93,7 @@
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
   grv    1      2      3      4      5      6      7      8      9      0      -      =      •
-  •      lsft   lmet   lalt   lctl   •      lctl   lalt   lmet   lsft   •      •      •
+  •      lsft   lmet   lalt   lctl   •      •      lctl   lalt   lmet   lsft   •      •
   •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •                    •                    •             •
 )
