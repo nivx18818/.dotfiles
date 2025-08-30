@@ -48,21 +48,22 @@
 (defalias
   alt-tab-cycle (multi lalt (macro-repeat (tab 500)))
 
-  a (tap-hold $tap-timeout $hold-timeout a lshift)
-  s (tap-hold $tap-timeout $hold-timeout s lmet)
-  d (tap-hold $tap-timeout $hold-timeout d lalt)
+  a (tap-hold $tap-timeout $hold-timeout a lmet)
+  s (tap-hold $tap-timeout $hold-timeout s lalt)
+  d (tap-hold $tap-timeout $hold-timeout d lshift)
   f (tap-hold $tap-timeout $hold-timeout f lctrl)
 
   j (tap-hold $tap-timeout $hold-timeout j lctrl)
-  k (tap-hold $tap-timeout $hold-timeout k lalt)
-  l (tap-hold $tap-timeout $hold-timeout l lmet)
-  ; (tap-hold $tap-timeout $hold-timeout ; lshift)
+  k (tap-hold $tap-timeout $hold-timeout k lshift)
+  l (tap-hold $tap-timeout $hold-timeout l lalt)
+  ; (tap-hold $tap-timeout $hold-timeout ; lmet)
 
   c (tap-hold $tap-timeout $hold-timeout c C-c)
   v (tap-hold $tap-timeout $hold-timeout v C-v)
   z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
   spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
   caps (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
+  ' (tap-hold-press $tap-timeout $hold-timeout ' (layer-toggle nav))
 
   l-hrm (layer-switch hrm)
 )
@@ -75,7 +76,7 @@
   esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
-  @caps  @a     @s     @d     @f     g      h      @j     @k     @l     @;     '      ret
+  @caps  @a     @s     @d     @f     g      h      @j     @k     @l     @;     @'      ret
   lsft   @z     x      @c     @v     b      n      m      ,      .      /      rsft
   lctl   lmet   lalt                 @spc                 ralt          rctl
 )
@@ -83,9 +84,9 @@
 (deflayer nav
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
-  •      •      •      •      •      •      home   pgup   end    pgdn   bspc   •      •      •
-  @l-hrm lsft   lmet   lalt   lctl   •      left   down   up     right  ret    •      •
-  •      •      •      •      •      •      •      •      •      •      del    •
+  •      •      vold   volu   mute   •      home   pgup   end    pgdn   bspc   •      •      •
+  @l-hrm lmet   lalt   lshift lctl   •      left   down   up     right  ret    •      •
+  •      •      •      prev   pp     next   •      •      •      •      del    •
   •      •      •                    •                    •             •
 )
 
