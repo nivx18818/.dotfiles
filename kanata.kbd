@@ -83,7 +83,7 @@
 (deflayer nav
   •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
-  •      •      •      •      •      •      home   pgup   end    pgdn   •      bspc   •      •
+  •      •      •      •      •      •      home   pgup   end    pgdn   bspc   •      •      •
   @l-hrm lsft   lmet   lalt   lctl   •      left   down   up     right  ret    •      •
   •      •      •      •      •      •      •      •      •      •      del    •
   •      •      •                    •                    •             •
