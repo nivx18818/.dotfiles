@@ -66,19 +66,28 @@
 (deflayer hrm
          f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
+  esc    @a     @s     @d     @f     g      h      @j     @k     @l     @;     '      ret
+  lsft   z      x      c      v      b      n      m      ,      .      /      rsft
+  lctl   lmet   lalt                 spc                  ralt          rctl
+)
+
+(deflayer mod
+         f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+  grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      bspc   del    \
   @esc   @a     @s     @d     @f     g      h      @j     @k     @l     @;     @'     ret
   @l-num @z     x      @c     @v     b      n      m      ,      .      /      @l-num
-  lctl   lmet   lalt                 spc                  ralt          rctl
+  lctl   lmet   lalt                 spc                  ret           rctl
 )
 
 (deflayer nav
          •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      vold   volu   mute   •      home   pgup   end    pgdn   esc    •      •      •
-  @l-hrm lmet   lalt   lctl   lsft   •      left   down   up     right  ret    •      •
+  @l-hrm lmet   lalt   lctl   lsft   •      left   down   up     right  •      •      •
   •      •      •      prev   pp     next   •      •      @ldesk @rdesk del    •
-  •      •      •                    bspc                 •             •
+  •      •      ret                  bspc                 •             •
 )
 
 (deflayer num
@@ -104,8 +113,9 @@
 ;; =========================
 
 (defchordsv2
+  (l s d) (layer-switch default) $chord-timeout first-release ()
   (l s h) (layer-switch hrm) $chord-timeout first-release ()
   (l s n a) (layer-switch nav) $chord-timeout first-release ()
   (l s n u) (layer-switch num) $chord-timeout first-release ()
-  (l s d) (layer-switch default) $chord-timeout first-release ()
+  (l s m) (layer-switch mod) $chord-timeout first-release ()
 )
