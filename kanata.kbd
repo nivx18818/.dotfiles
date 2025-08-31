@@ -23,21 +23,19 @@
 ;; =========================
 
 (defalias
-  alt-tab-cycle (multi lalt (macro-repeat (tab 500)))
-
   a (tap-hold $tap-timeout $hold-timeout a lmet)
   s (tap-hold $tap-timeout $hold-timeout s lalt)
-  d (tap-hold $tap-timeout $hold-timeout d lshift)
-  f (tap-hold $tap-timeout $hold-timeout f lctrl)
+  d (tap-hold $tap-timeout $hold-timeout d lctrl)
+  f (tap-hold $tap-timeout $hold-timeout f lshift)
 
-  j (tap-hold $tap-timeout $hold-timeout j lctrl)
-  k (tap-hold $tap-timeout $hold-timeout k lshift)
+  j (tap-hold $tap-timeout $hold-timeout j lshift)
+  k (tap-hold $tap-timeout $hold-timeout k lctrl)
   l (tap-hold $tap-timeout $hold-timeout l lalt)
   ; (tap-hold $tap-timeout $hold-timeout ; lmet)
 
   c (tap-hold $tap-timeout $hold-timeout c C-c)
   v (tap-hold $tap-timeout $hold-timeout v C-v)
-  z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
+  z (tap-hold $tap-timeout $hold-timeout z C-z)
   esc (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
   ' (tap-hold-press $tap-timeout $hold-timeout ' (layer-toggle nav))
 
@@ -77,10 +75,10 @@
 (deflayer nav
          •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
-  •      •      vold   volu   mute   •      home   pgup   end    pgdn   bspc   •      •      •
-  @l-hrm lmet   lalt   lshift lctl   •      left   down   up     right  ret    •      •
+  •      •      vold   volu   mute   •      home   pgup   end    pgdn   esc    •      •      •
+  @l-hrm lmet   lalt   lctl   lsft   •      left   down   up     right  ret    •      •
   •      •      •      prev   pp     next   •      •      @ldesk @rdesk del    •
-  •      •      •                    •                    •             •
+  •      •      •                    bspc                 •             •
 )
 
 (deflayer num
@@ -106,7 +104,8 @@
 ;; =========================
 
 (defchordsv2
-  (esc h) (layer-switch hrm) $chord-timeout first-release ()
-  (esc n) (layer-switch nav) $chord-timeout first-release ()
-  (esc d) (layer-switch default) $chord-timeout first-release ()
+  (l s h) (layer-switch hrm) $chord-timeout first-release ()
+  (l s n a) (layer-switch nav) $chord-timeout first-release ()
+  (l s n u) (layer-switch num) $chord-timeout first-release ()
+  (l s d) (layer-switch default) $chord-timeout first-release ()
 )
