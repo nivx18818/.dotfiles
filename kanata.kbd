@@ -19,16 +19,6 @@
 )
 
 ;; =========================
-;; Chords
-;; =========================
-
-(defchordsv2
-  (caps h) (layer-switch hrm) $chord-timeout first-release ()
-  (caps b) (layer-switch base) $chord-timeout first-release ()
-  (caps n) (layer-switch nav) $chord-timeout first-release ()
-)
-
-;; =========================
 ;; Alias
 ;; =========================
 
@@ -48,11 +38,11 @@
   c (tap-hold $tap-timeout $hold-timeout c C-c)
   v (tap-hold $tap-timeout $hold-timeout v C-v)
   z (tap-hold $tap-timeout $hold-timeout z @alt-tab-cycle)
-  spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
-  caps (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
+  esc (tap-hold-press $tap-timeout $hold-timeout esc (layer-toggle nav))
   ' (tap-hold-press $tap-timeout $hold-timeout ' (layer-toggle nav))
 
   l-hrm (layer-switch hrm)
+  l-num (layer-toggle num)
 
   ldesk M-C-left
   rdesk M-C-right
@@ -63,10 +53,10 @@
 ;; =========================
 
 (defsrc
-  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+         f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
-  caps   a      s      d      f      g      h      j      k      l      ;      '      ret
+  esc    a      s      d      f      g      h      j      k      l      ;      '      ret
   lsft   z      x      c      v      b      n      m      ,      .      /      rsft
   lctl   lmet   lalt                 spc                  ralt          rctl
 )
@@ -76,16 +66,16 @@
 ;; =========================
 
 (deflayer hrm
-  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+         f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      bspc   del    \
-  @caps  @a     @s     @d     @f     g      h      @j     @k     @l     @;     @'     ret
-  lsft   @z     x      @c     @v     b      n      m      ,      .      /      rsft
-  lctl   lmet   lalt                 @spc                 ralt          rctl
+  @esc   @a     @s     @d     @f     g      h      @j     @k     @l     @;     @'     ret
+  @l-num @z     x      @c     @v     b      n      m      ,      .      /      @l-num
+  lctl   lmet   lalt                 spc                  ralt          rctl
 )
 
 (deflayer nav
-  •      •      •      •      •      •      •      •      •      •      •      •      •
+         •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
   •      •      vold   volu   mute   •      home   pgup   end    pgdn   bspc   •      •      •
   @l-hrm lmet   lalt   lshift lctl   •      left   down   up     right  ret    •      •
@@ -94,19 +84,29 @@
 )
 
 (deflayer num
-  •      •      •      •      •      •      •      •      •      •      •      •      •
+         •      •      •      •      •      •      •      •      •      •      •      •
   •      •      •      •      •      •      •      •      •      •      •      •      •      •
   S-grv  S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    bspc   •      •
-  grv    1      2      3      4      5      6      7      8      9      0      spc    •
-  spc    S-\    S-=    S--    S-[    S-]    [      ]      -      =      \      •
-  •      •      •                    •                    •             •
+  grv    1      2      3      4      5      6      7      8      9      0      l      •
+  •      S-\    S-=    S--    S-[    S-]    [      ]      -      =      \      •
+  •      •      •                    spc                  •             •
 )
 
-(deflayer base
-  esc    f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
+(deflayer default
+         f1     f2     f3     f4     f5     f6     f7     f8     f9     f10    f11    f12
   grv    1      2      3      4      5      6      7      8      9      0      -      =      bspc
   tab    q      w      e      r      t      y      u      i      o      p      [      ]      \
   esc    a      s      d      f      g      h      j      k      l      ;      '      ret
   lsft   z      x      c      v      b      n      m      ,      .      /      rsft
   lctl   lmet   lalt                 spc                  ralt          rctl
+)
+
+;; =========================
+;; Chords
+;; =========================
+
+(defchordsv2
+  (esc h) (layer-switch hrm) $chord-timeout first-release ()
+  (esc n) (layer-switch nav) $chord-timeout first-release ()
+  (esc d) (layer-switch default) $chord-timeout first-release ()
 )
