@@ -23,10 +23,23 @@ winget install LGUG2Z.komorebi
 winget install LGUG2Z.whkd
 ```
 
-### Upgrade
+### Scoop
 
 ```powershell
+scoop bucket add extras
+scoop install komorebi whkd
+```
+
+### Upgrades
+
+```powershell
+# for winget
 winget upgrade LGUG2Z.komorebi
+```
+
+```powershell
+# for scoop
+scoop update komorebi whkd
 ```
 
 ## `KOMOREBI_CONFIG_HOME` & `WHKD_CONFIG_HOME`
