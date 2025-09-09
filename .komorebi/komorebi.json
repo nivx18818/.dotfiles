@@ -75,6 +75,22 @@
             "0": "Create",
             "4": "Append"
           }
+        },
+        {
+          "name": "6",
+          "layout": "BSP",
+          "window_container_behaviour_rules": {
+            "0": "Create",
+            "4": "Append"
+          }
+        },
+        {
+          "name": "7",
+          "layout": "BSP",
+          "window_container_behaviour_rules": {
+            "0": "Create",
+            "4": "Append"
+          }
         }
       ]
     }
