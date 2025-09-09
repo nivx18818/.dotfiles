@@ -1,4 +1,8 @@
-# komorebi
+<h1 align="center">komorebi</h1>
+
+<p align="center">Tiling Window Management for Windows.</p>
+
+---
 
 ## Installation
 
