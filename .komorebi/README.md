@@ -1,9 +1,4 @@
-# How to use my config ?
-
-> This repository contains my personal configuration files for `komorebi`. For more information about these tools, please refer to their respective repositories:
->
-> - [komorebi](https://github.com/LGUG2Z/komorebi)
-> - [yasb](https://github.com/amnweb/yasb)
+# komorebi
 
 ## Installation
 
