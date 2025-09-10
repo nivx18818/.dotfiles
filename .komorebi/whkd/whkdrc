@@ -2,7 +2,7 @@
 
 # Reload whkd configuration
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
-alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
+# alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
 alt + shift + o         : komorebic reload-configuration
 
 alt + s                 : komorebic toggle-shortcuts
@@ -54,8 +54,8 @@ alt + shift + r         : komorebic retile
 alt + p                 : komorebic toggle-pause
 
 # Layouts
-alt + x                 : komorebic flip-layout horizontal
-alt + y                 : komorebic flip-layout vertical
+alt + shift + x         : komorebic flip-layout horizontal
+alt + shift + y         : komorebic flip-layout vertical
 
 # Workspaces
 alt + 1                 : komorebic focus-workspace 0
@@ -66,6 +66,10 @@ alt + 5                 : komorebic focus-workspace 4
 alt + 6                 : komorebic focus-workspace 5
 alt + 7                 : komorebic focus-workspace 6
 alt + 8                 : komorebic focus-workspace 7
+
+# Cycle through workspaces
+alt + oem_comma             : komorebic cycle-workspace previous
+alt + oem_period            : komorebic cycle-workspace next
 
 # Move windows across workspaces
 alt + shift + 1         : komorebic move-to-workspace 0
