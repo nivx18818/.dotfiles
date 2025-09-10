@@ -40,56 +40,49 @@
           "name": "1",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         },
         {
           "name": "2",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         },
         {
           "name": "3",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         },
         {
           "name": "4",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         },
         {
           "name": "5",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Create"
           }
         },
         {
           "name": "6",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         },
         {
           "name": "7",
           "layout": "BSP",
           "window_container_behaviour_rules": {
-            "0": "Create",
-            "4": "Append"
+            "0": "Append"
           }
         }
       ]
