@@ -3,7 +3,7 @@
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "mouse_follows_focus": true,
+  "mouse_follows_focus": false,
   "default_workspace_padding": 4,
   "default_container_padding": 4,
   "border": true,
@@ -31,60 +31,43 @@
   },
   "animation": {
     "enabled": true,
+    "duration": 400,
     "fps": 120,
-    "style": [0.32, 0.72, 0, 1]
+    "style": {
+      "movement": "EaseOutBack",
+      "transparency": "Linear"
+    }
   },
   "monitors": [
     {
       "workspaces": [
         {
           "name": "1",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         },
         {
           "name": "2",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         },
         {
           "name": "3",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         },
         {
           "name": "4",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         },
         {
           "name": "5",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Create"
-          }
+          "layout": "BSP"
         },
         {
           "name": "6",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         },
         {
           "name": "7",
-          "layout": "BSP",
-          "window_container_behaviour_rules": {
-            "0": "Append"
-          }
+          "layout": "BSP"
         }
       ]
     }
