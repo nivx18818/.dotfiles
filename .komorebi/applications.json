@@ -3060,6 +3060,11 @@
     ],
     "ignore": [
       {
+        "kind": "Exe",
+        "id": "explorer.exe",
+        "matching_strategy": "Equals"
+      },
+      {
         "kind": "Class",
         "id": "NativeHWNDHost",
         "matching_strategy": "Equals"
