@@ -7,7 +7,7 @@
   "default_workspace_padding": 4,
   "default_container_padding": 4,
   "border": true,
-  "border_width": 6,
+  "border_width": 4,
   "border_offset": -1,
   "theme": {
     "palette": "Catppuccin",
@@ -16,8 +16,9 @@
     "unfocused_border": "Blue",
     "monocle_border": "Peach",
     "floating_border": "Yellow",
-    "stack_border": "Green",
-    "stackbar_background": "Surface0"
+    "stack_border": "Mauve",
+    "stackbar_background": "Surface0",
+    "stackbar_focused_text": "Mauve"
   },
   "stackbar": {
     "height": 30,
@@ -25,7 +26,7 @@
     "label": "Title",
     "tabs": {
       "width": 450,
-      "font_family": "DankMono Nerd Font Mono"
+      "font_family": "JetBrainsMono NFP"
     }
   },
   "animation": {
