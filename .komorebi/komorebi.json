@@ -16,9 +16,9 @@
     "unfocused_border": "Blue",
     "monocle_border": "Peach",
     "floating_border": "Yellow",
-    "stack_border": "Mauve",
+    "stack_border": "Sapphire",
     "stackbar_background": "Surface0",
-    "stackbar_focused_text": "Mauve"
+    "stackbar_focused_text": "Sapphire"
   },
   "stackbar": {
     "height": 30,
