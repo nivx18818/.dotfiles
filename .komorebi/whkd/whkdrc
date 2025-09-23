@@ -35,10 +35,10 @@ alt + shift + l         : komorebic move right
 alt + shift + return    : komorebic promote
 
 # Stack windows
-alt + y                 : komorebic stack left
-alt + u                 : komorebic stack down
-alt + i                 : komorebic stack up
-alt + o                 : komorebic stack right
+alt + shift + u         : komorebic stack left
+alt + shift + i         : komorebic stack down
+alt + shift + o         : komorebic stack up
+alt + shift + p         : komorebic stack right
 alt + oem_1             : komorebic unstack # oem_1 is ;
 alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
 alt + oem_6             : komorebic cycle-stack next # oem_6 is ]
@@ -72,8 +72,8 @@ alt + 7                 : komorebic focus-workspace 6
 alt + 8                 : komorebic focus-workspace 7
 
 # Cycle through workspaces
-alt + shift + oem_comma             : komorebic cycle-workspace previous
-alt + shift + oem_period            : komorebic cycle-workspace next
+alt + shift + oem_comma : komorebic cycle-workspace previous
+alt + shift + oem_period: komorebic cycle-workspace next
 
 # Move windows across workspaces
 alt + shift + 1         : komorebic move-to-workspace 0
