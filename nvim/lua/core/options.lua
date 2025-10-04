@@ -8,6 +8,9 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.foldcolumn = '1'
+
+vim.opt.wrap = true
 
 -- Enable mouse mode
 vim.opt.mouse = 'a'
@@ -56,12 +59,33 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
 
+vim.opt.autoread = true
+vim.opt.autowrite = true
+vim.opt.autowriteall = true
+
+vim.opt.cmdheight = 0
+
 vim.opt.hlsearch = true
+vim.opt.incsearch = true;
+
+vim.conceallevel = 0
+
+vim.opt.fileencoding = 'utf-8'
+
+vim.opt.pumheight = 10
+
+vim.opt.smartindent = true
+
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.writebackup = false
+
 vim.opt.termguicolors = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
