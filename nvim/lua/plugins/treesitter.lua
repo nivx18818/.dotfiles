@@ -4,24 +4,72 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'html', 'css', 'javascript', 'typescript', 'python', 'json', 'jsdoc', 'tsx' },
       -- Autoinstall languages that are not installed
       auto_install = true,
+
+      autopairs = {
+        enable = true,
+      },
+
+      rainbow = {
+        enable = false,
+        extended_mode = false,
+        max_file_lines = nil,
+      },
+
       highlight = {
         enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = true,
       },
+
       indent = { enable = true, disable = { 'ruby' } },
+
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+        config = {
+          typescript = { __default = "// %s", __multiline = "/* %s */" },
+          css = "/* %s */",
+          scss = { __default = "// %s", __multiline = "/* %s */" },
+          php = { __default = "// %s", __multiline = "/* %s */" },
+          html = "<!-- %s -->",
+          svelte = "<!-- %s -->",
+          vue = "<!-- %s -->",
+          handlebars = "{{! %s }}",
+          glimmer = "{{! %s }}",
+          graphql = "# %s",
+          lua = { __default = "-- %s", __multiline = "--[[ %s ]]" },
+          vim = '" %s',
+          tsx = {
+            __default = "// %s",
+            __multiline = "/* %s */",
+            jsx_element = "{/* %s */}",
+            jsx_fragment = "{/* %s */}",
+            jsx_attribute = { __default = "// %s", __multiline = "/* %s */" },
+            comment = { __default = "// %s", __multiline = "/* %s */" },
+            call_expression = { __default = "// %s", __multiline = "/* %s */" },
+            statement_block = { __default = "// %s", __multiline = "/* %s */" },
+            spread_element = { __default = "// %s", __multiline = "/* %s */" },
+          },
+          javascript = {
+            __default = "// %s",
+            __multiline = "/* %s */",
+            jsx_element = "{/* %s */}",
+            jsx_fragment = "{/* %s */}",
+            jsx_attribute = { __default = "// %s", __multiline = "/* %s */" },
+            comment = { __default = "// %s", __multiline = "/* %s */" },
+            call_expression = { __default = "// %s", __multiline = "/* %s */" },
+            statement_block = { __default = "// %s", __multiline = "/* %s */" },
+            spread_element = { __default = "// %s", __multiline = "/* %s */" },
+          },
+        },
+      },
+
+      autotag = {
+        enable = true,
+      },
     },
-    -- There are additional nvim-treesitter modules that you can use to interact
-    -- with nvim-treesitter. You should go explore a few and see what interests you:
-    --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-    --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-    --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
   { 'nvim-treesitter/nvim-treesitter-textobjects' },
   { 'nvim-treesitter/nvim-treesitter-context' },
