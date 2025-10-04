@@ -20,9 +20,3 @@ map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
-
--- File explorer
-map('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle File Explorer' })
-
--- Telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc = 'Find Files' })
