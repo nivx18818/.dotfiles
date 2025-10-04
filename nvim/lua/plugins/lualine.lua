@@ -2,6 +2,7 @@ local function smart_filename()
   local fullpath = vim.fn.expand("%:p")
   if fullpath == "" then return "" end
   local filename = vim.fn.expand("%:t")
+  if filename == "" then return "" end
   local parent = vim.fn.fnamemodify(fullpath, ":h:t")
 
   local display = parent .. "/" .. filename
