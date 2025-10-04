@@ -8,6 +8,8 @@ return {
       require('poimandres').setup({
         disable_background = true,
         disable_float_background = true,
+        disable_italics = false,
+        bold_vert_split = false,
         dim_nc_background = true,
         highlight_groups = {
           LspReferenceText = { link = "Visual" },
