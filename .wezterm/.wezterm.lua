@@ -14,7 +14,7 @@ config.colors = {
 }
 
 -- font
-config.font = wezterm.font("DankMono Nerd Font", { weight = "Bold" });
+config.font = wezterm.font("DankMono Nerd Font Mono", { weight = "Bold" });
 config.font_size = 12.5
 config.line_height = 1.8
 
