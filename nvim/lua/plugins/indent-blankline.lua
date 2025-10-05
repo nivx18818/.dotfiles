@@ -26,11 +26,11 @@ return {
   },
   config = function(_, opts)
     local hooks = require("ibl.hooks")
-    local palette = require("poimandres.palette")
+    local p = require("poimandres.palette")
 
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-      vim.api.nvim_set_hl(0, "IblIndent", { fg = palette.background1 })
+      vim.api.nvim_set_hl(0, "IblIndent", { fg = p.background1 })
     end)
 
     require("ibl").setup(opts)
