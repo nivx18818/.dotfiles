@@ -8,23 +8,34 @@ return {
   },
   lazy = false,
   keys = {
-    { "<leader>e",  "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+    { "<leader>e",  "<cmd>Neotree reveal<cr>", desc = "Reveal Explorer" },
     { "<leader>fe", "<cmd>Neotree focus<cr>",  desc = "Focus Explorer" },
   },
   opts = {
     close_if_last_window = true,
-    popup_border_style = "rounded",
     enable_git_status = true,
     enable_diagnostics = true,
+
     filesystem = {
       follow_current_file = {
         enabled = true,
       },
       use_libuv_file_watcher = true,
     },
+
     window = {
-      position = 'right',
+      position = "float",
       width = 32,
+      popup = {
+        size = {
+          height = "17",
+          width = "45",
+        },
+        position = "50%",
+        border = "rounded",
+        title = " 󰉓 Explorer ",
+        title_pos = "center",
+      },
       mappings = {
         ["<space>"] = "none",
         ["l"] = "open",
@@ -40,8 +51,11 @@ return {
         ["x"] = "cut_to_clipboard",
         ["p"] = "paste_from_clipboard",
         ["q"] = "close_window",
+        ["<S-Tab>"] = "prev_source",
+        ["<Tab>"] = "next_source",
       }
     },
-    source = { "filesystem", "buffers", "git_status" },
+
+    sources = { "filesystem", "buffers", "git_status" },
   },
 }
