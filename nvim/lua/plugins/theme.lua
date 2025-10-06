@@ -14,6 +14,7 @@ return {
         dim_nc_background = false,
         highlight_groups = {
           WinSeparator = { fg = p.background1 },
+          FloatBorder = { bg = p.none, fg = p.background1 },
 
           -- LSP highlights
           LspReferenceText = { link = "Visual" },
@@ -25,7 +26,6 @@ return {
           NeoTreeNormalNC = { bg = p.background2, fg = p.text },
           NeoTreeCursorLine = { bg = p.background1 },
           NeoTreeIndentMarker = { fg = p.background1 },
-          NeoTreeFloatBorder = { bg = p.none, fg = p.background1 },
 
           -- Directory / root
           NeoTreeDirectoryName = { fg = p.blueGray2 },
