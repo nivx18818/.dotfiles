@@ -5,7 +5,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 ## What’s in this repo
 
 - [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper configuration.
-- [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager configuration.
+- [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
 - [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
 - [`wezTerm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
 - [`yasb`](https://github.com/amnweb/yasb) — Windows status bar configuration.
