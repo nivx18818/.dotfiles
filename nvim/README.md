@@ -48,6 +48,7 @@ Below are my personal notes for the way I configured `cord.nvim` on Arch Linux r
   ```
 
   > Replace `mnt/d/npiperelay/npiperelay.exe` with the actual path to your `npiperelay.exe` file.
+  >
   > `mnt/d/` corresponds to `D:\` in Windows.
 
 - Restart your WSL2 terminal or source the `.bashrc` file:
