@@ -4,10 +4,16 @@ This folder contains my personal Neovim configuration written in Lua.
 
 ## Prerequisites
 
-- Git
-- Neovim (see version above)
-- A terminal supporting true color (PowerShell, WSL, Windows Terminal, etc.)
-- Optional: ripgrep, fd, node, Python, and language servers for LSP features
+- Latest version of [Neovim](https://github.com/neovim/neovim).
+- Basic utils: `git`, `curl`, `unzip`, `make`, C compiler (`gcc`).
+- [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
+  [fd-find](https://github.com/sharkdp/fd#installation)
+- A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
+  - if you have it, set `vim.g.have_nerd_font` to true
+- Language Formatter Setup:
+  - For Rust-based tools (like `stylua`, `taplo`, etc.): install `rust`.
+  - For Node.js-based tools (like `prettier`, `eslint_d`, etc.): install `nodejs` and `npm` or `yarn`.
+  - For Python-based tools (like `black`, `flake8`, etc.): install `python3` and `pip`.
 
 ## File structure
 
