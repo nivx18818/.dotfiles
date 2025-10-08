@@ -1,15 +1,15 @@
 return { -- Autoformat
-  'stevearc/conform.nvim',
-  event = { 'BufWritePre' },
-  cmd = { 'ConformInfo' },
+  "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
   keys = {
     {
-      '<leader>f',
+      "<leader>cf",
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require("conform").format({ async = true, lsp_format = "fallback" })
       end,
-      mode = '',
-      desc = '[F]ormat buffer',
+      mode = "",
+      desc = "Format",
     },
   },
   opts = {
@@ -24,12 +24,12 @@ return { -- Autoformat
       else
         return {
           timeout_ms = 500,
-          lsp_format = 'fallback',
+          lsp_format = "fallback",
         }
       end
     end,
     formatters_by_ft = {
-      lua = { 'stylua' },
+      lua = { "stylua" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
     },
     default_format_opts = {
