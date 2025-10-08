@@ -17,7 +17,6 @@ require("nivx.core.options")
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
-  group = vim.api.nvim_create_augroup("core-config", { clear = true }),
   callback = function()
     require("nivx.core.keymaps")
     require("nivx.core.autocmds")
