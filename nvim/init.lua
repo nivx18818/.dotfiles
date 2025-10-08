@@ -1,4 +1,4 @@
-_G.Utils = require("core.utils")
+_G.Utils = require("nivx.core.utils")
 
 -- This is the bootstrap code for lazy.nvim (the plugin manager)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -13,18 +13,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load core settings before plugins
-require("core.options")
+require("nivx.core.options")
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   group = vim.api.nvim_create_augroup("core-config", { clear = true }),
   callback = function()
-    require("core.keymaps")
-    require("core.autocmds")
+    require("nivx.core.keymaps")
+    require("nivx.core.autocmds")
   end,
 })
 
-require("lazy").setup("plugins", {
+require("lazy").setup("nivx.plugins", {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = "⌘",
