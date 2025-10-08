@@ -1,19 +1,34 @@
 return { -- Autoformat
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
+  dependencies = { "mason.nvim" },
+  lazy = true,
+  cmd = "ConformInfo",
   keys = {
     {
       "<leader>cf",
       function()
-        require("conform").format({ async = true, lsp_format = "fallback" })
+        require("conform").format({{ async = true, lsp_format = "fallback" }})
       end,
-      mode = "",
+      mode = { "n", "v" },
       desc = "Format",
     },
   },
   opts = {
-    notify_on_error = false,
+    default_format_opts = {
+      timeout_ms = 3000,
+      async = false,
+      quite = false,
+      lsp_format = "fallback",
+      try_node_executable = true,
+    },
+    formatters_by_ft = {
+      lua = { "stylua" },
+      javascript = { "prettier", "prettierd", stop_after_first = true },
+    },
+    formatters = {
+      injected = { options = { ignore_errors = true } },
+    },
+    -- notify_on_error = false,
     format_on_save = false,
     -- format_on_save = function(bufnr)
     --   local disable_filetypes = {}
@@ -26,13 +41,6 @@ return { -- Autoformat
     --     }
     --   end
     -- end,
-    formatters_by_ft = {
-      lua = { "stylua" },
-      javascript = { "prettierd", "prettier", stop_after_first = true },
-    },
-    default_format_opts = {
-      try_node_executable = true,
-    },
     mason_install = true,
   },
 }
