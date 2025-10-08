@@ -79,3 +79,5 @@ After following the installation instructions, if `wakatime-cli` is not automati
   - `riscv64`: for machines using the RISC-V architecture (very rare, mostly for research).
 
 - Extract the downloaded archive, rename the binary to `wakatime-cli`, and place it in `~/.wakatime`.
+
+- After installation, verify `wakatime-cli` is working from inside Neovim by running the command `:WakaTimeToday` (this should show today's coding activity if the CLI and plugin are configured correctly).
