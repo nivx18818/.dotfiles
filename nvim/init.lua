@@ -1,3 +1,5 @@
+_G.Utils = require("core.utils")
+
 -- This is the bootstrap code for lazy.nvim (the plugin manager)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
