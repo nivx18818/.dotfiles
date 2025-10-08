@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+-- Yank from first to last non-blank character
+map("n", "Y", "^yg_", { desc = "Yank from first to last non-blank character", silent = true })
+
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
