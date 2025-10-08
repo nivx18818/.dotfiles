@@ -1,92 +1,140 @@
--- Set <space> as the leader key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- ==============================
+-- 🌐 General Behavior
+-- ==============================
 
--- Set to true if a Nerd Font is installed and selected in the terminal
-vim.g.have_nerd_font = true
+-- Leader keys
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Make line numbers default
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.foldcolumn = '1'
+-- UI font / plugin globals
+vim.g.have_nerd_font = true       -- true if terminal uses Nerd Font
+vim.g.snacks_animate = true       -- enable Snacks plugin animations
+vim.g.markdown_recommended_style = 0 -- disable markdown's default tab settings
 
-vim.opt.wrap = true
+-- Better colors and file handling
+local opt = vim.opt
+opt.termguicolors = true          -- enable true color
+opt.fileencoding = "utf-8"        -- default file encoding
+opt.confirm = true                -- prompt before quitting unsaved files
+opt.autoread = true               -- auto reload file if changed outside
+opt.autowrite = true              -- auto write before running commands
+opt.autowriteall = true           -- auto write all modified buffers
+opt.backup = false                -- disable backup files
+opt.swapfile = false              -- disable swap files
+opt.writebackup = false           -- disable write-backup
+opt.undofile = true               -- persistent undo history
+opt.undolevels = 10000             -- max undo steps
 
--- Enable mouse mode
-vim.opt.mouse = 'a'
+-- ==============================
+-- 🖱️ UI & Appearance
+-- ==============================
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+opt.number = true                 -- show line numbers
+opt.relativenumber = true         -- relative line numbers
+opt.cursorline = true             -- highlight current line
+opt.linebreak = true              -- wrap lines at word boundaries
+opt.scrolloff = 10                -- keep 10 lines above/below cursor
+opt.sidescrolloff = 10            -- keep 10 columns beside cursor
+opt.signcolumn = "yes"            -- always show sign column (e.g. git/diagnostic icons)
+opt.laststatus = 3                -- global statusline
+opt.ruler = false                 -- hide old ruler (statusline replaces it)
+opt.showmode = false              -- don’t show mode (statusline handles it)
+opt.list = true                   -- show invisible characters
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.fillchars = {                 -- custom symbols for folds/diff/end of buffer
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+opt.pumblend = 10                 -- popup menu transparency
+opt.pumheight = 10                -- max number of completion menu items
+opt.hlsearch = true               -- highlight search results
+opt.incsearch = true              -- show matches while typing
+opt.conceallevel = 0              -- show all concealed text (like markdown backticks)
+opt.foldcolumn = "1"              -- show fold column
+opt.foldlevel = 99                -- open all folds by default
+opt.foldmethod = "indent"         -- fold based on indentation
+opt.foldtext = ""                 -- disable custom fold text
+opt.winminwidth = 5               -- minimum window width
+opt.smoothscroll = true           -- smooth scrolling
+opt.jumpoptions = "view"          -- retain view after jumping
 
--- Sync clipboard between OS and Neovim.
--- Schedule the setting after `UiEnter` because it can increase startup-time.
+-- ==============================
+-- 🧠 Editing Behavior
+-- ==============================
+
+opt.mouse = "a"                   -- enable mouse support
+opt.wrap = true                   -- enable line wrapping
+opt.breakindent = true            -- keep indent when wrapping
+opt.smartindent = true            -- smart auto-indentation
+opt.tabstop = 2                   -- number of spaces per tab
+opt.shiftwidth = 2                -- number of spaces per indentation level
+opt.shiftround = true             -- round indent to nearest multiple of shiftwidth
+opt.expandtab = true              -- use spaces instead of tabs
+opt.virtualedit = "block"         -- allow block selection past line end
+opt.completeopt = "menu,menuone,noselect" -- better completion experience
+opt.shortmess:append({ W = true, I = true, c = true, C = true }) -- reduce message noise
+
+-- ==============================
+-- 🔍 Search & Navigation
+-- ==============================
+
+opt.ignorecase = true             -- ignore case in search
+opt.smartcase = true              -- override ignorecase if search has capitals
+opt.inccommand = "nosplit"        -- live preview substitutions
+opt.grepformat = "%f:%l:%c:%m"    -- grep result format
+opt.grepprg = "rg --vimgrep"      -- use ripgrep for :grep
+
+-- ==============================
+-- 🪟 Windows & Splits
+-- ==============================
+
+opt.splitright = true             -- vertical split opens to the right
+opt.splitbelow = true             -- horizontal split opens below
+opt.splitkeep = "screen"          -- keep text stable when splitting
+
+-- ==============================
+-- 🧾 Session Management
+-- ==============================
+
+opt.sessionoptions = {
+  "buffers",                      -- restore opened buffers
+  "curdir",                       -- restore working directory
+  "tabpages",                     -- restore tabs
+  "winsize",                      -- restore window sizes
+  "help",                         -- restore help windows
+  "globals",                      -- restore global variables
+  "skiprtp",                      -- don’t store runtimepath
+  "folds",                        -- restore folds
+}
+
+-- ==============================
+-- ⚡ Performance & Timing
+-- ==============================
+
+opt.updatetime = 200              -- faster cursor-hold and diagnostics
+opt.timeoutlen = 300              -- shorter key-sequence timeout
+
+-- ==============================
+-- 📚 Spell Checking
+-- ==============================
+
+opt.spelllang = { "en", "vi", "la" } -- spell-check languages
+
+-- ==============================
+-- 🪄 Clipboard Integration
+-- ==============================
+
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+  -- don’t use system clipboard if in SSH session (OSC52 handles it)
+  opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 end)
 
--- Enable break indent
-vim.opt.breakindent = true
+-- ==============================
+-- 🧩 Command-line Completion
+-- ==============================
 
--- Save undo history
-vim.opt.undofile = true
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
-
--- Decrease update time
-vim.opt.updatetime = 250
-
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
-
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- Sets how neovim will display certain whitespace characters in the editor.
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 10
-
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s)
-vim.o.confirm = true
-
-vim.opt.autoread = true
-vim.opt.autowrite = true
-vim.opt.autowriteall = true
-
-vim.opt.cmdheight = 0
-
-vim.opt.hlsearch = true
-vim.opt.incsearch = true;
-
-vim.conceallevel = 0
-
-vim.opt.fileencoding = 'utf-8'
-
-vim.opt.pumheight = 10
-
-vim.opt.smartindent = true
-
-vim.opt.backup = false
-vim.opt.swapfile = false
-vim.opt.writebackup = false
-
-vim.opt.termguicolors = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+opt.wildmode = "longest:full,full" -- command-line completion behavior
