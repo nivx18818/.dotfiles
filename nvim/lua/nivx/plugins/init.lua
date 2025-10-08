@@ -1,10 +1,8 @@
 return {
-  spec = {
-    { import = "plugins.core" },
-    { import = "plugins.lsp" },
-    { import = "plugins.ui" },
-    { import = "plugins.git" },
-    { import = "plugins.coding" },
-    { import = "plugins.tools" },
-  },
+  { import = "nivx.plugins.core" },
+  { import = "nivx.plugins.lsp" },
+  { import = "nivx.plugins.ui" },
+  { import = "nivx.plugins.git" },
+  { import = "nivx.plugins.coding" },
+  { import = "nivx.plugins.tools" },
 }
