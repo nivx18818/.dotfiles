@@ -6,8 +6,9 @@ This folder contains my personal Neovim configuration written in Lua.
 
 - Latest version of [Neovim](https://github.com/neovim/neovim).
 - Basic utils: `git`, `curl`, `unzip`, `make`, C compiler (`gcc`).
-- [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
-  [fd-find](https://github.com/sharkdp/fd#installation)
+- Others: [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
+  [fd-find](https://github.com/sharkdp/fd#installation),
+  [lazygit](https://github.com/jesseduffield/lazygit#installation)
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it, set `vim.g.have_nerd_font` to true
 - Language Formatter Setup:
