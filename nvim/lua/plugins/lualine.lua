@@ -1,18 +1,27 @@
 local function smart_filename()
   local fullpath = vim.fn.expand("%:p")
-  if fullpath == "" then return "" end
+  if fullpath == "" then
+    return ""
+  end
+
   local filename = vim.fn.expand("%:t")
-  if filename == "" then return "" end
+  if filename == "" then
+    return ""
+  end
+
   local parent = vim.fn.fnamemodify(fullpath, ":h:t")
 
   local display = parent .. "/" .. filename
 
-  local available = vim.fn.winwidth(0)
-  if available < 120 then
-    return filename
-  else
-    return display
+  local text = (vim.fn.winwidth(0) < 120) and filename or display
+
+  if vim.bo.modified then
+    text = text .. " [+]"
+  elseif not vim.bo.modifiable or vim.bo.readonly then
+    text = text .. " [RO]"
   end
+
+  return text
 end
 
 return {
