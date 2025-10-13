@@ -1,0 +1,342 @@
+{
+  "whichkey.bindings": [
+    {
+      "key": " ",
+      "name": "Find File",
+      "type": "command",
+      "command": "workbench.action.quickOpen"
+    },
+    {
+      "key": "`",
+      "name": "Switch to other buffer",
+      "type": "command",
+      "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+      "key": "e",
+      "name": "Explorer",
+      "type": "command",
+      "command": "workbench.view.explorer"
+    },
+    {
+      "key": "f",
+      "name": "+file/find",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Find File",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "b",
+          "name": "Find buffer",
+          "type": "command",
+          "command": "workbench.action.showAllEditors"
+        },
+        {
+          "key": "w",
+          "name": "Find window",
+          "type": "command",
+          "command": "workbench.action.switchWindow"
+        },
+        {
+          "key": "r",
+          "name": "Recent files",
+          "type": "command",
+          "command": "workbench.action.openRecent"
+        },
+        {
+          "key": "n",
+          "name": "New File",
+          "type": "command",
+          "command": "workbench.action.newUntitledFile"
+        },
+        {
+          "key": "t",
+          "name": "Terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ]
+    },
+    {
+      "key": "s",
+      "name": "+search",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Workspace symbol",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols"
+        },
+        {
+          "key": "g",
+          "name": "Grep",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        }
+      ]
+    },
+    {
+      "key": "c",
+      "name": "+code",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Code action",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "f",
+          "name": "Format document",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "r",
+          "name": "Rename symbol",
+          "type": "command",
+          "command": "editor.action.rename"
+        }
+      ]
+    },
+    {
+      "key": "d",
+      "name": "+debug",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Start/Continue",
+          "type": "command",
+          "command": "workbench.action.debug.start"
+        },
+        {
+          "key": "b",
+          "name": "Toggle breakpoint",
+          "type": "command",
+          "command": "editor.debug.action.toggleBreakpoint"
+        },
+        {
+          "key": "c",
+          "name": "Continue",
+          "type": "command",
+          "command": "workbench.action.debug.continue"
+        },
+        {
+          "key": "i",
+          "name": "Step into",
+          "type": "command",
+          "command": "workbench.action.debug.stepInto"
+        },
+        {
+          "key": "o",
+          "name": "Step over",
+          "type": "command",
+          "command": "workbench.action.debug.stepOver"
+        },
+        {
+          "key": "u",
+          "name": "Step out",
+          "type": "command",
+          "command": "workbench.action.debug.stepOut"
+        },
+        {
+          "key": "r",
+          "name": "Restart",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "q",
+          "name": "Stop debugging",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
+        },
+        {
+          "key": "n",
+          "name": "Next diagnostic",
+          "type": "command",
+          "command": "editor.action.marker.next"
+        },
+        {
+          "key": "p",
+          "name": "Previous diagnostic",
+          "type": "command",
+          "command": "editor.action.marker.prev"
+        }
+      ]
+    },
+    {
+      "key": "g",
+      "name": "+git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "g",
+          "name": "Open git view",
+          "type": "command",
+          "command": "workbench.view.scm"
+        },
+        {
+          "key": "l",
+          "name": "View git log",
+          "type": "command",
+          "command": "git.viewHistory"
+        },
+        {
+          "key": "b",
+          "name": "Git blame",
+          "type": "command",
+          "command": "git.toggleFileBlame"
+        },
+        {
+          "key": "B",
+          "name": "Git browse (open)",
+          "type": "command",
+          "command": "github.openOnGitHubFileFromSelection"
+        }
+      ]
+    },
+    {
+      "key": "\t",
+      "name": "+tabs",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Close tab (editor group)",
+          "type": "command",
+          "command": "workbench.action.closeGroup"
+        },
+        {
+          "key": "D",
+          "name": "Close all tabs (editor groups)",
+          "type": "command",
+          "command": "workbench.action.closeAllGroups"
+        },
+        {
+          "key": "o",
+          "name": "Close other tabs (editor groups)",
+          "type": "command",
+          "command": "workbench.action.firstEditorInGroup"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "+windows",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "n",
+          "name": "New window",
+          "type": "command",
+          "command": "workbench.action.newWindow"
+        },
+        {
+          "key": "d",
+          "name": "Delete window",
+          "type": "command",
+          "command": "workbench.action.closeWindow"
+        },
+        {
+          "key": "r",
+          "name": "Reload window",
+          "type": "command",
+          "command": "workbench.action.reloadWindow"
+        },
+        {
+          "key": "-",
+          "name": "Split window below",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "|",
+          "name": "Split window right",
+          "type": "command",
+          "command": "workbench.action.splitEditorRight"
+        }
+      ]
+    },
+    {
+      "key": "b",
+      "name": "+buffer",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Delete buffer (editor)",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        {
+          "key": "o",
+          "name": "Delete other buffers (editor)",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "b",
+          "name": "Switch to other buffer",
+          "type": "command",
+          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+        }
+      ]
+    },
+    {
+      "key": "x",
+      "name": "+diagnostics",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "q",
+          "name": "Quickfix list",
+          "type": "command",
+          "command": "workbench.actions.view.problems"
+        },
+        {
+          "key": "x",
+          "name": "Toggle problems panel",
+          "type": "command",
+          "command": "workbench.actions.view.toggleProblems"
+        }
+      ]
+    },
+    {
+      "key": "q",
+      "name": "+quit",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "q",
+          "name": "Quit all",
+          "type": "commands",
+          "commands": [
+            "workbench.action.closeAllEditors",
+            "workbench.action.closeWindow"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "u",
+      "name": "+ui",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "r",
+          "name": "Redraw / Clear hlsearch / Diff Update",
+          "type": "command",
+          "command": ""
+        }
+      ]
+    }
+  ]
+}

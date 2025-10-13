@@ -1,0 +1,13 @@
+[
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "neovim.mode != insert && (editorFocus || explorerViewletFocus) && !whichkeyVisible"
+  },
+  {
+    "key": "tab",
+    "command": "whichkey.triggerKey",
+    "args": "\t",
+    "when": "whichkeyVisible"
+  }
+]
