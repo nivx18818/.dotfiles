@@ -2,15 +2,18 @@
   "whichkey.bindings": [
     {
       "key": " ",
-      "name": "Find File",
+      "name": "Find file",
       "type": "command",
       "command": "workbench.action.quickOpen"
     },
     {
       "key": "`",
       "name": "Switch to other buffer",
-      "type": "command",
-      "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+      "type": "commands",
+      "commands": [
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "list.select"
+      ]
     },
     {
       "key": "e",
@@ -291,8 +294,11 @@
         {
           "key": "b",
           "name": "Switch to other buffer",
-          "type": "command",
-          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+          "type": "commands",
+          "commands": [
+            "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+            "list.select"
+          ]
         }
       ]
     },
