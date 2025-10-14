@@ -1,14 +1,9 @@
 local map = vim.keymap.set
+local vscode = require("vscode");
 
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Down" })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Up" })
-
--- Window navigation (as remaps, per your request)
-map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 -- Move Lines
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move Down" })
@@ -17,10 +12,10 @@ map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
 
 -- Buffer/Tab navigation
-map("n", "<S-h>", function() require("vscode").call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "<S-l>", function() require("vscode").call("workbench.action.nextEditor") end, { desc = "Next Editor" })
-map("n", "[b", function() require("vscode").call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "]b", function() require("vscode").call("workbench.action.nextEditor") end, { desc = "Next Editor" })
+map("n", "<S-h>", function() vscode.call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
+map("n", "<S-l>", function() vscode.call("workbench.action.nextEditor") end, { desc = "Next Editor" })
+map("n", "[b", function() vscode.call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
+map("n", "]b", function() vscode.call("workbench.action.nextEditor") end, { desc = "Next Editor" })
 
 -- Clear search highlight on escape
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -48,7 +43,3 @@ map("v", ">", ">gv")
 -- Commenting
 map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
 map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
-
--- Terminal
-map("t", "<esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode" })
-map({ "n", "t" }, "<C-/>", function() require("vscode").call("workbench.action.terminal.toggleTerminal") end, { desc = "Toggle Terminal" })

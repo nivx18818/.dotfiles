@@ -1,13 +1,40 @@
 [
+  // which-key
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "neovim.mode != insert && (editorFocus || explorerViewletFocus) && !whichkeyVisible"
+    "when": "neovim.mode != insert && (editorFocus || !textInputFocus) && !terminalFocus && !inQuickOpen && !whichkeyVisible"
   },
   {
     "key": "tab",
     "command": "whichkey.triggerKey",
     "args": "\t",
     "when": "whichkeyVisible"
+  },
+
+  // vscode-neovim
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "!terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "!terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "!terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.terminal.toggleTerminal"
   }
 ]
