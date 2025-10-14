@@ -8,7 +8,7 @@
     },
     {
       "key": "`",
-      "name": "Switch to other buffer",
+      "name": "Switch to other buffer (editor)",
       "type": "commands",
       "commands": [
         "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
@@ -34,7 +34,7 @@
       "bindings": [
         {
           "key": "f",
-          "name": "Find File",
+          "name": "Find file",
           "type": "command",
           "command": "workbench.action.quickOpen"
         },
@@ -121,7 +121,7 @@
       "bindings": [
         {
           "key": "d",
-          "name": "Start/Continue",
+          "name": "Start",
           "type": "command",
           "command": "workbench.action.debug.start"
         },
@@ -287,13 +287,13 @@
         },
         {
           "key": "o",
-          "name": "Delete other buffers (editor)",
+          "name": "Delete other buffers (editors)",
           "type": "command",
           "command": "workbench.action.closeOtherEditors"
         },
         {
           "key": "b",
-          "name": "Switch to other buffer",
+          "name": "Switch to other buffer (editor)",
           "type": "commands",
           "commands": [
             "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
