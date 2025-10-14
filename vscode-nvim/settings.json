@@ -19,6 +19,12 @@
       "command": "workbench.view.explorer"
     },
     {
+      "key": "t",
+      "name": "Terminal",
+      "type": "command",
+      "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
       "key": "f",
       "name": "+file/find",
       "type": "bindings",
@@ -335,6 +341,30 @@
           "name": "Redraw / Clear hlsearch / Diff Update",
           "type": "command",
           "command": ""
+        },
+        {
+          "key": "s",
+          "name": "Toggle sidebar",
+          "type": "command",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+          "key": "a",
+          "name": "Toggle Auxiliary Bar",
+          "type": "command",
+          "command": "workbench.action.toggleAuxiliaryBar"
+        },
+        {
+          "key": "t",
+          "name": "Toggle status bar",
+          "type": "command",
+          "command": "workbench.action.toggleStatusbarVisibility"
+        },
+        {
+          "key": "b",
+          "name": "Toggle activity bar",
+          "type": "command",
+          "command": "workbench.action.toggleActivityBarVisibility"
         }
       ]
     }
