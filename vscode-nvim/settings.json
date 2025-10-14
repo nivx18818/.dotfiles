@@ -344,7 +344,7 @@
         },
         {
           "key": "a",
-          "name": "Toggle Auxiliary Bar",
+          "name": "Toggle auxiliary bar",
           "type": "command",
           "command": "workbench.action.toggleAuxiliaryBar"
         },
