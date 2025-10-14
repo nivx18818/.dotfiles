@@ -37,10 +37,10 @@
     "key": "ctrl+/",
     "command": "workbench.action.terminal.toggleTerminal"
   },
-  // let you call which-key to close the settings editor
   {
+    // allow which-key calling
     "key": "escape",
     "command": "workbench.action.blur",
-    "when": "!editorFocus && inputFocus && inSettingsEditor"
+    "when": "!editorFocus && inputFocus && (inSettingsEditor || auxiliaryBarFocus || inKeybindings)"
   }
 ]
