@@ -9,7 +9,7 @@ autocmd("TextYankPost", {
   end,
 })
 
--- Workaround for vscode-neovim UI desync (issue #2117 - https://github.com/vscode-neovim/vscode-neovim/issues/2117)
+-- Workaround for vscode-neovim UI desync (issue https://github.com/vscode-neovim/vscode-neovim/issues/2117)
 
 -- 1. Redraw on CursorHold (idle for some time)
 autocmd('CursorHold', {
