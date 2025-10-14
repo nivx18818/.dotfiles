@@ -8,3 +8,23 @@ autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- Workaround for vscode-neovim UI desync (issue #2117 - https://github.com/vscode-neovim/vscode-neovim/issues/2117)
+
+-- 1. Redraw on CursorHold (idle for some time)
+autocmd('CursorHold', {
+  group = augroup('VSCodeRedrawFix', { clear = true }),
+  callback = function()
+    vim.cmd('silent! mode')  -- triggers a lightweight redraw
+  end,
+})
+
+-- 2. Redraw immediately after text changes (e.g., visual delete)
+autocmd({ "TextChanged", "TextChangedI" }, {
+  group = augroup('RedrawOnDelete', { clear = true }),
+  callback = function()
+    if vim.fn.mode() == 'n' then
+      vim.cmd('silent! mode')  -- refresh UI after delete/insert
+    end
+  end,
+})
