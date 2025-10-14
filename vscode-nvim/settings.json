@@ -337,12 +337,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "r",
-          "name": "Redraw / Clear hlsearch / Diff Update",
-          "type": "command",
-          "command": ""
-        },
-        {
           "key": "s",
           "name": "Toggle sidebar",
           "type": "command",
