@@ -17,10 +17,10 @@ map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
 
 -- Buffer/Tab navigation
-map("n", "<S-h>", function() vim.fn.VSCodeNotify("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "<S-l>", function() vim.fn.VSCodeNotify("workbench.action.nextEditor") end, { desc = "Next Editor" })
-map("n", "[b", function() vim.fn.VSCodeNotify("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "]b", function() vim.fn.VSCodeNotify("workbench.action.nextEditor") end, { desc = "Next Editor" })
+map("n", "<S-h>", function() require("vscode").call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
+map("n", "<S-l>", function() require("vscode").call("workbench.action.nextEditor") end, { desc = "Next Editor" })
+map("n", "[b", function() require("vscode").call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
+map("n", "]b", function() require("vscode").call("workbench.action.nextEditor") end, { desc = "Next Editor" })
 
 -- Clear search highlight on escape
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -51,4 +51,4 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 
 -- Terminal
 map("t", "<esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode" })
-map({ "n", "t" }, "<C-/>", function() vim.fn.VSCodeNotify("workbench.action.terminal.toggleTerminal") end, { desc = "Toggle Terminal" })
+map({ "n", "t" }, "<C-/>", function() require("vscode").call("workbench.action.terminal.toggleTerminal") end, { desc = "Toggle Terminal" })
