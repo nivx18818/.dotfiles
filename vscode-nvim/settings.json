@@ -103,8 +103,8 @@
         {
           "key": "f",
           "name": "Format document",
-          "type": "command",
-          "command": "editor.action.formatDocument"
+          "type": "commands",
+          "commands": ["editor.action.formatDocument", "eslint.executeAutofix"]
         },
         {
           "key": "r",
@@ -251,8 +251,11 @@
         {
           "key": "d",
           "name": "Delete window",
-          "type": "command",
-          "command": "workbench.action.closeWindow"
+          "type": "commands",
+          "commands": [
+            "workbench.action.closeAuxiliaryBar",
+            "workbench.action.closeWindow"
+          ]
         },
         {
           "key": "r",
