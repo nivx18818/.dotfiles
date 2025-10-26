@@ -58,6 +58,16 @@
     "when": "terminalFocus"
   },
   {
+    "key": "ctrl+.",
+    "command": "workbench.action.chat.openModePicker",
+    "when": "inChat"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.chat.openModelPicker",
+    "when": "inChat"
+  },
+  {
     // allow which-key calling
     "key": "escape",
     "command": "workbench.action.blur",
