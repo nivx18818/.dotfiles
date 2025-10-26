@@ -215,7 +215,7 @@
           "key": "d",
           "name": "Close tab (editor group)",
           "type": "command",
-          "command": "workbench.action.closeGroup"
+          "command": "workbench.action.closeEditorsAndGroup"
         },
         {
           "key": "D",
@@ -227,7 +227,7 @@
           "key": "o",
           "name": "Close other tabs (editor groups)",
           "type": "command",
-          "command": "workbench.action.firstEditorInGroup"
+          "command": "workbench.action.closeEditorsInOtherGroups"
         }
       ]
     },
