@@ -60,13 +60,7 @@
           "key": "n",
           "name": "New File",
           "type": "command",
-          "command": "workbench.action.newUntitledFile"
-        },
-        {
-          "key": "t",
-          "name": "Terminal",
-          "type": "command",
-          "command": "workbench.action.terminal.toggleTerminal"
+          "command": "workbench.action.files.newUntitledFile"
         }
       ]
     },
