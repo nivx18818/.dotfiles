@@ -85,9 +85,15 @@
     },
     {
       "key": "c",
-      "name": "+code",
+      "name": "+code/chat",
       "type": "bindings",
       "bindings": [
+        {
+          "key": "c",
+          "name": "Open chat",
+          "type": "command",
+          "command": "workbench.action.chat.open"
+        },
         {
           "key": "a",
           "name": "Code action",
@@ -340,13 +346,13 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "s",
+          "key": "b",
           "name": "Toggle sidebar",
           "type": "command",
           "command": "workbench.action.toggleSidebarVisibility"
         },
         {
-          "key": "a",
+          "key": "i",
           "name": "Toggle auxiliary bar",
           "type": "command",
           "command": "workbench.action.toggleAuxiliaryBar"
@@ -358,7 +364,7 @@
           "command": "workbench.action.toggleStatusbarVisibility"
         },
         {
-          "key": "b",
+          "key": "a",
           "name": "Toggle activity bar",
           "type": "command",
           "command": "workbench.action.toggleActivityBarVisibility"
@@ -368,6 +374,12 @@
           "name": "Open extensions",
           "type": "command",
           "command": "workbench.view.extensions"
+        },
+        {
+          "key": "s",
+          "name": "Open settings",
+          "type": "command",
+          "command": "workbench.action.openSettings"
         }
       ]
     }
