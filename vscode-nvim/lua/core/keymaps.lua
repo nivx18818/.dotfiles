@@ -11,12 +11,6 @@ map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move Up" })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
 
--- Buffer/Tab navigation
-map("n", "<S-h>", function() vscode.call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "<S-l>", function() vscode.call("workbench.action.nextEditor") end, { desc = "Next Editor" })
-map("n", "[b", function() vscode.call("workbench.action.previousEditor") end, { desc = "Previous Editor" })
-map("n", "]b", function() vscode.call("workbench.action.nextEditor") end, { desc = "Next Editor" })
-
 -- Clear search highlight on escape
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
