@@ -380,6 +380,12 @@
           "name": "Open settings",
           "type": "command",
           "command": "workbench.action.openSettings"
+        },
+        {
+          "key": "r",
+          "name": "Redraw",
+          "type": "command",
+          "command": "vscode-neovim.restart"
         }
       ]
     }
