@@ -5,7 +5,7 @@
 # alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
 alt + shift + o         : komorebic reload-configuration
 
-alt + g                 : komorebic toggle-shortcuts
+alt + m                 : komorebic toggle-shortcuts
 
 # App shortcuts - these require shell to be pwsh / powershell
 # The apps will be focused if open, or launched if not open
@@ -15,8 +15,8 @@ alt + g                 : komorebic toggle-shortcuts
 alt + return            : start wt
 
 alt + q                 : komorebic close
-alt + m                 : komorebic manage
-alt + shift + m         : komorebic unmanage
+alt + g                 : komorebic manage
+alt + shift + g         : komorebic unmanage
 alt + b                 : komorebic stackbar-mode on-stack
 alt + shift + b         : komorebic stackbar-mode never
 

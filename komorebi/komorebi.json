@@ -7,7 +7,7 @@
   "default_workspace_padding": 4,
   "default_container_padding": 4,
   "border": true,
-  "border_width": 4,
+  "border_width": 2,
   "border_offset": -1,
   "theme": {
     "palette": "Catppuccin",
@@ -22,7 +22,7 @@
   },
   "stackbar": {
     "height": 30,
-    "mode": "OnStack",
+    "mode": "Never",
     "label": "Title",
     "tabs": {
       "width": 450,
@@ -68,8 +68,29 @@
         {
           "name": "7",
           "layout": "BSP"
+        },
+        {
+          "name": "8",
+          "layout": "BSP"
         }
       ]
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "explorer.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Clock",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "navicat.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
