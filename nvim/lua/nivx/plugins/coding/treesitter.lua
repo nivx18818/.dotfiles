@@ -1,10 +1,29 @@
 return {
   { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    main = "nvim-treesitter.configs", -- Sets main module to use for opts
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'html', 'css', 'javascript', 'typescript', 'python', 'json', 'jsdoc', 'tsx' },
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
+        "query",
+        "vim",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "python",
+        "json",
+        "jsdoc",
+        "tsx",
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
 
@@ -23,7 +42,7 @@ return {
         additional_vim_regex_highlighting = true,
       },
 
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { "ruby" } },
 
       context_commentstring = {
         enable = true,
@@ -71,7 +90,7 @@ return {
       },
     },
   },
-  { 'nvim-treesitter/nvim-treesitter-textobjects' },
-  { 'nvim-treesitter/nvim-treesitter-context' },
-  { 'nvim-treesitter/playground' }
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "nvim-treesitter/nvim-treesitter-context" },
+  { "nvim-treesitter/playground" },
 }
