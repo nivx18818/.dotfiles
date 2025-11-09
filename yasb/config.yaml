@@ -29,60 +29,16 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 45
+      height: 30
     padding:
       top: 4
       left: 4
       bottom: 0
       right: 4
     widgets:
-      left:
-        [
-          "home",
-          "komorebi_control",
-          "komorebi_active_layout",
-          "komorebi_workspaces",
-          "active_window",
-        ]
+      left: ["komorebi_control", "komorebi_workspaces", "active_window"]
       center: ["clock"]
-      right: ["disk", "cpu", "memory", "systray", "power_menu"]
-  status-bar-2:
-    enabled: true
-    screens: ["<do yasbc monitor-information>"]
-    class_name: "yasb-bar"
-    alignment:
-      position: "top"
-      center: false
-    animation:
-      enabled: true
-      duration: 800
-    blur_effect:
-      enabled: false
-      acrylic: false
-      dark_mode: false
-      round_corners: true
-      border_color: none
-    window_flags:
-      always_on_top: false
-      windows_app_bar: true
-    dimensions:
-      width: "100%"
-      height: 40
-    padding:
-      top: 4
-      left: 4
-      bottom: 0
-      right: 4
-    widgets:
-      left:
-        [
-          "home",
-          "komorebi_active_layout",
-          "komorebi_workspaces",
-          "active_window",
-        ]
-      center: ["clock"]
-      right: ["media", "volume"]
+      right: ["cpu", "memory", "systray", "power_menu"]
 
 widgets:
   wallpaper:
@@ -178,8 +134,10 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "<span>\uf017</span>{%a, %b %d | %I:%M %p}"
-      label_alt: "<span>\uf017</span>{%a, %b %d | %H:%M:%S}"
+      # label: "<span>\uf017</span>{%a, %b %d | %I:%M %p}"
+      # label_alt: "<span>\uf017</span>{%a, %b %d | %H:%M:%S}"
+      label: "{%a, %b %d | %I:%M %p}"
+      label_alt: "{%a, %b %d | %H:%M:%S}"
       timezones: [] #Looking up time zone info from registry
   volume:
     type: "yasb.volume.VolumeWidget"
