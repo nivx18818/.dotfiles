@@ -19,11 +19,11 @@ bars:
       enabled: true
       duration: 800
     blur_effect:
-      enabled: false
+      enabled: true
       acrylic: false
       dark_mode: true
       round_corners: true
-      border_color: none
+      border_color: None
     window_flags:
       always_on_top: false
       windows_app_bar: true
