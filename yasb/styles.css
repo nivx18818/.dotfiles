@@ -35,7 +35,7 @@
     --widget-border-radius: 8px;
     --bar-border-radius: 14px;
     --no-bar: rgba(0, 0, 0, 0);
-    --custom-bar: rgba(17, 17, 27, 0.95);
+    /* --custom-bar: rgba(17, 17, 27, 0.95); */
     --custom-bar: rgba(17, 17, 27, 0.5);
 
     --bar-accent: rgb(245, 194, 231);
