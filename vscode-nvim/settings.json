@@ -7,7 +7,7 @@
       "command": "workbench.action.quickOpen"
     },
     {
-      "key": ">",
+      "key": "p",
       "name": "Command palette",
       "type": "command",
       "command": "workbench.action.showCommands"
