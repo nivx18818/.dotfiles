@@ -7,13 +7,10 @@
       "command": "workbench.action.quickOpen"
     },
     {
-      "key": "`",
-      "name": "Switch to other buffer (editor)",
-      "type": "commands",
-      "commands": [
-        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-        "list.select"
-      ]
+      "key": ">",
+      "name": "Command palette",
+      "type": "command",
+      "command": "workbench.action.showCommands"
     },
     {
       "key": "e",
@@ -401,6 +398,27 @@
           ]
         }
       ]
+    },
+    {
+      "key": "`",
+      "name": "Switch to other buffer (editor)",
+      "type": "commands",
+      "commands": [
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "list.select"
+      ]
+    },
+    {
+      "key": ".",
+      "name": "Repeat most recent action",
+      "type": "command",
+      "command": "whichkey.repeatMostRecent"
+    },
+    {
+      "key": "?",
+      "name": "Search keybindings",
+      "type": "command",
+      "command": "whichkey.searchBindings"
     }
   ]
 }
