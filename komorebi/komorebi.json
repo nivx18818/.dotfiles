@@ -108,6 +108,11 @@
       "kind": "Exe",
       "id": "Overwolf.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "UltraViewer_Desktop.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
