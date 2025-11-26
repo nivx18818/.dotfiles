@@ -1,6 +1,7 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
+show_systray: false
 
 komorebi:
   start_command: "komorebic start --whkd"
