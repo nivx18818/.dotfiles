@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-local vscode = require("vscode");
 
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Down" })
