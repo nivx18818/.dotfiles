@@ -44,8 +44,19 @@ scoop update komorebi whkd
 
 ## `KOMOREBI_CONFIG_HOME` & `WHKD_CONFIG_HOME`
 
-- Create the file `%USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` if it doesn't already exist.
-- Open the file with your favorite text editor and add the following lines at the end of the file:
+- Open PowerShell and run the following command to check whether you already have a profile file:
+
+  ```powershell
+  Test-Path $PROFILE
+  ```
+
+  If the command returns `False`, create the profile file by running:
+
+  ```powershell
+  New-Item -Path $PROFILE -ItemType File -Force
+  ```
+
+- Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
   $Env:KOMOREBI_CONFIG_HOME = "<path-to-this-repository>\komorebi"
@@ -55,8 +66,8 @@ scoop update komorebi whkd
   For example:
 
   ```powershell
-  $Env:KOMOREBI_CONFIG_HOME = "D:\.dotfiles\komorebi"
-  $Env:WHKD_CONFIG_HOME = "D:\.dotfiles\komorebi\whkd"
+  $Env:KOMOREBI_CONFIG_HOME = "D:\dotfiles\komorebi"
+  $Env:WHKD_CONFIG_HOME = "D:\dotfiles\komorebi\whkd"
   ```
 
 - Allow the execution of PowerShell scripts if you haven't already done so:
