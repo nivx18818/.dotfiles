@@ -40,13 +40,13 @@ scoop install yasb
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:YASB_CONFIG_HOME = "<path-to-this-repository>\yasb"
+  $Env:YASB_CONFIG_HOME="<path-to-this-repository>\yasb"
   ```
 
   For example:
 
   ```powershell
-  $Env:YASB_CONFIG_HOME = "D:\dotfiles\yasb"
+  $Env:YASB_CONFIG_HOME="D:\code\dotfiles\yasb"
   ```
 
 - Allow the execution of PowerShell scripts if you haven't already done so:
