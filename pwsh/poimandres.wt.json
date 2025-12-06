@@ -1,0 +1,23 @@
+{
+  "name": "Poimandres",
+  "background": "#1B1E28",
+  "selectionBackground": "#212532",
+  "foreground": "#A6ACCD",
+  "cursorColor": "#A6ACCD",
+  "black": "#1B1E28",
+  "blue": "#89DDFF",
+  "cyan": "#89DDFF",
+  "green": "#5DE4C7",
+  "purple": "#F087BD",
+  "red": "#D0679D",
+  "white": "#A6ACCD",
+  "yellow": "#FFFAC2",
+  "brightBlack": "#A6ACCD",
+  "brightBlue": "#ADD7FF",
+  "brightCyan": "#ADD7FF",
+  "brightGreen": "#5DE4C7",
+  "brightPurple": "#F087BD",
+  "brightRed": "#D0679D",
+  "brightWhite": "#FFFFFF",
+  "brightYellow": "#FFFAC2"
+}
