@@ -1,4 +1,4 @@
-# Installation
+# Configuration
 
 - Open PowerShell and run the following command to check whether you already have a profile file:
 
@@ -23,3 +23,11 @@
   ```powershell
   . "D:\code\dotfiles\pwsh\profile.ps1"
   ```
+
+- Allow the execution of PowerShell scripts if you haven't already done so:
+
+  ```powershell
+  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+  ```
+
+- Restart your PowerShell session to apply the changes.
