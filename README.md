@@ -7,6 +7,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper configuration.
 - [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
 - [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
+- [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.
 - [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) — Visual Studio Code extension configuration to use Neovim as the editor backend.
 - [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
 - [`yasb`](https://github.com/amnweb/yasb) — Windows status bar configuration.
