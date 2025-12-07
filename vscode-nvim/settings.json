@@ -262,7 +262,7 @@
           "command": "workbench.action.debug.stepOver"
         },
         {
-          "key": "u",
+          "key": "t",
           "name": "Step out",
           "type": "command",
           "command": "workbench.action.debug.stepOut"
