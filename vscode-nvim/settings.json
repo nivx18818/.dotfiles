@@ -183,7 +183,7 @@
         },
         {
           "key": "f",
-          "name": "Format document",
+          "name": "Format",
           "type": "command",
           "command": "editor.action.formatDocument"
         },
