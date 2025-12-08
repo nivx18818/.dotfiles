@@ -44,6 +44,43 @@ function gclone {
     }
 }
 
+# Unix-like remove command with -r and -f flags
+function rm {
+    param(
+        [Parameter(Mandatory)]
+        [string]$path,
+
+        [Alias('r')] [switch]$Recursive,  # -r flag (recursive)
+        [Alias('f')] [switch]$Force       # -f flag (force)
+    )
+
+    $recurse = $Recursive.IsPresent
+    $force   = $Force.IsPresent
+
+    Remove-Item -Path $path -Recurse:$recurse -Force:$force -ErrorAction SilentlyContinue
+}
+
+# Unix-like copy command with optional -r
+function cp {
+    param(
+        [Parameter(Mandatory)] [string]$src,
+        [Parameter(Mandatory)] [string]$dst,
+        [Alias('r')] [switch]$Recursive
+    )
+
+    Copy-Item -Path $src -Destination $dst -Recurse:$Recursive
+}
+
+# Unix-like move command
+function mv {
+    param(
+        [Parameter(Mandatory)] [string]$src,
+        [Parameter(Mandatory)] [string]$dst
+    )
+
+    Move-Item -Path $src -Destination $dst
+}
+
 # mkdir & cd
 function mkcd {
     param([Parameter(Mandatory)] [string]$name)
@@ -51,7 +88,7 @@ function mkcd {
     Set-Location $name
 }
 
-# which
+# Show the command's path (Unix-like)
 function which {
     param([Parameter(Mandatory)] [string]$name)
     (Get-Command $name).Source
