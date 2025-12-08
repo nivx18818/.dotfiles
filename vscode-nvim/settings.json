@@ -184,6 +184,12 @@
         {
           "key": "f",
           "name": "Format document",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "F",
+          "name": "Format & fix",
           "type": "commands",
           "commands": ["editor.action.formatDocument", "eslint.executeAutofix"]
         },
