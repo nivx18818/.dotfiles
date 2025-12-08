@@ -6,6 +6,8 @@ $Env:NVIM_APPNAME="vscode-nvim"
 
 oh-my-posh init pwsh --config "D:\code\dotfiles\pwsh\poimandres.omp.json" | Invoke-Expression
 
+fastfetch
+
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 # Keybindings
