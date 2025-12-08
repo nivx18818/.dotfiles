@@ -8,7 +8,51 @@ oh-my-posh init pwsh --config "D:\code\dotfiles\pwsh\poimandres.omp.json" | Invo
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
+# Keybindings
 Set-PSReadLineKeyHandler -Key "Ctrl+b" -Function BackwardWord
 Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function ForwardWord
 Set-PSReadLineKeyHandler -Key 'Ctrl+p' -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
+
+# Better git clone
+function gclone {
+    param(
+        [Parameter(Mandatory)]
+        [string]$url,
+
+        [string]$dir
+    )
+
+    # Add .git suffix if it's missing
+    if (-not $url.EndsWith('.git')) {
+        $url = "$url.git"
+    }
+
+    # If no custom directory is provided, extract repo name from URL
+    if (-not $dir) {
+        # Take the last segment of the URL and strip the .git extension
+        $repoName = ($url.Split('/')[-1] -replace '\.git$', '')
+        $dir = $repoName
+    }
+
+    # Clone the repository into the target directory
+    git clone $url $dir | Out-Null
+
+    # After a successful clone, move into the new directory
+    if (Test-Path $dir) {
+        Set-Location $dir
+    }
+}
+
+# mkdir & cd
+function mkcd {
+    param([Parameter(Mandatory)] [string]$name)
+    New-Item -ItemType Directory -Path $name | Out-Null
+    Set-Location $name
+}
+
+# which
+function which {
+    param([Parameter(Mandatory)] [string]$name)
+    (Get-Command $name).Source
+}
