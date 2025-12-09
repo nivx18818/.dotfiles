@@ -21,10 +21,10 @@ scoop install main/neovim
 
 ## Installation
 
-1. Install the [VSCode Neovim extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim).
+1. Install the [VSCode Neovim extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) and [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey).
 2. Configure the extension to point to your Neovim installation.
 
-## `XDG_CONFIG_HOME` & `NVIM_APPNAME`
+### `XDG_CONFIG_HOME` & `NVIM_APPNAME`
 
 - Open PowerShell and run the following command to check whether you already have a profile file:
 
@@ -59,3 +59,7 @@ scoop install main/neovim
   ```
 
 - Restart your PowerShell session to apply the changes.
+
+### `settings.json`
+
+- Add this folder's `settings.json` file to your VSCode user settings.
