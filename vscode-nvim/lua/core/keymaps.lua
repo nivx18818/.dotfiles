@@ -21,6 +21,20 @@ map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search R
 map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
+-- NORMAL MODE: keep cursor in place after search
+map('n', '*', '*N', { silent = true }) -- highlight word under cursor, stay on it
+map('n', '#', '#N', { silent = true }) -- same for backwards search
+
+-- VISUAL MODE: search for selection and reselect
+map('v', '*', '"vy/<C-r>v<CR>gv', { silent = true }) -- search forward for visual selection, reselect it
+map('v', '#', '"vy?<C-r>v<CR>gv', { silent = true }) -- search backward for visual selection, reselect it
+
+-- Go to Definition
+map('n', 'gr', function() vim.fn.VSCodeNotify('editor.action.goToReferences') end, { silent = true })
+
+-- Yank from first to last non-blank character
+map('n', 'Y', '^yg_');
+
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
