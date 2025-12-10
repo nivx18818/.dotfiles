@@ -35,7 +35,12 @@
   },
   {
     "key": "ctrl+/",
-    "command": "workbench.action.terminal.toggleTerminal"
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.focus",
+    "when": "panelFocus && !terminalFocus"
   },
   {
     "key": "ctrl+t",
