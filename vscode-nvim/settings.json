@@ -387,6 +387,12 @@
           "command": "workbench.action.toggleAuxiliaryBar"
         },
         {
+          "key": "p",
+          "name": "Toggle panel",
+          "type": "command",
+          "command": "workbench.action.togglePanel"
+        },
+        {
           "key": "t",
           "name": "Toggle status bar",
           "type": "command",
