@@ -2,5 +2,4 @@
 *.exe
 *.log
 .prettierrc
-vscode-nvim/lazy-lock.json
 *.bak
