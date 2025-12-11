@@ -5,7 +5,9 @@ $Env:XDG_CONFIG_HOME="D:\code\dotfiles\vscode-nvim"
 
 oh-my-posh init pwsh --config "D:\code\dotfiles\pwsh\poimandres.omp.json" | Invoke-Expression
 
-fastfetch
+if ($Env:TERM_PROGRAM -ne "vscode") {
+    fastfetch
+}
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
