@@ -10,6 +10,7 @@ if ($Env:TERM_PROGRAM -ne "vscode") {
 }
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineOption -Colors @{ InlinePrediction  = "#767c9d" }
 
 # Keybindings
 Set-PSReadLineKeyHandler -Key "Ctrl+b" -Function BackwardWord
