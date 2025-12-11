@@ -9,9 +9,6 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
 -- Clear search highlight on escape
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
--- Better void register
-map({ "n", "x" }, "_", '"_')
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
 map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
