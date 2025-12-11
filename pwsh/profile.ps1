@@ -49,19 +49,37 @@ function gclone {
 }
 
 # Unix-like remove command with -r and -f flags
+
+Remove-Item Alias:rm -ErrorAction SilentlyContinue
+
 function rm {
     param(
-        [Parameter(Mandatory)]
-        [string]$path,
-
-        [Alias('r')] [switch]$Recursive,  # -r flag (recursive)
-        [Alias('f')] [switch]$Force       # -f flag (force)
+        [Parameter(ValueFromRemainingArguments = $true)]
+        [string[]]$Args
     )
 
-    $recurse = $Recursive.IsPresent
-    $force   = $Force.IsPresent
+    $recursive = $false
+    $force = $false
+    $paths = @()
 
-    Remove-Item -Path $path -Recurse:$recurse -Force:$force -ErrorAction SilentlyContinue
+    foreach ($a in $Args) {
+        if ($a -match '^-[rf]+$') {
+            # Parse each character
+            foreach ($ch in ($a.Substring(1).ToCharArray())) {
+                switch ($ch) {
+                    'r' { $recursive = $true }
+                    'f' { $force = $true }
+                }
+            }
+        } else {
+            # Anything not a flag is a path
+            $paths += $a
+        }
+    }
+
+    foreach ($p in $paths) {
+        Remove-Item -Path $p -Recurse:$recursive -Force:$force -ErrorAction SilentlyContinue
+    }
 }
 
 # Unix-like copy command with optional -r
