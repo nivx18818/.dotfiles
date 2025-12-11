@@ -4,27 +4,30 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 
 ## Prerequisites
 
-Install [Neovim](https://neovim.io/).
+- Install [Neovim](https://neovim.io/).
 
-### Winget
+  - Winget
 
-```powershell
-winget install Neovim.Neovim
-```
+    ```powershell
+    winget install Neovim.Neovim
+    ```
 
-### Scoop
+  - Scoop
 
-```powershell
-scoop bucket add main
-scoop install main/neovim
-```
+    ```powershell
+    scoop bucket add main
+    scoop install main/neovim
+    ```
 
-## Installation
+- Install [VSCode](https://code.visualstudio.com/).
 
-1. Install the [VSCode Neovim extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) and [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey).
-2. Configure the extension to point to your Neovim installation.
+- Install the [VSCode Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) and [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey) extensions for VSCode.
 
-### `XDG_CONFIG_HOME` & `NVIM_APPNAME`
+## Configuration
+
+### Neovim
+
+#### `XDG_CONFIG_HOME`
 
 - Open PowerShell and run the following command to check whether you already have a profile file:
 
@@ -41,15 +44,13 @@ scoop install main/neovim
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:XDG_CONFIG_HOME="<path-to-this-repository>"
-  $Env:NVIM_APPNAME="vscode-nvim"
+  $Env:XDG_CONFIG_HOME="<path-to-this-repository>\vscode-nvim"
   ```
 
   For example:
 
   ```powershell
-  $Env:XDG_CONFIG_HOME="D:\code\dotfiles"
-  $Env:NVIM_APPNAME="vscode-nvim"
+  $Env:XDG_CONFIG_HOME="D:\code\dotfiles\vscode-nvim"
   ```
 
 - Allow the execution of PowerShell scripts if you haven't already done so:
@@ -60,6 +61,25 @@ scoop install main/neovim
 
 - Restart your PowerShell session to apply the changes.
 
-### `settings.json`
+### VSCode
 
-- Add this folder's `settings.json` file to your VSCode user settings.
+#### Neovim Path
+
+- Configure the **VSCode Neovim** extension to point to your Neovim installation by setting the `neovim.neovimExecutablePaths.windows` option.
+
+  - Open VSCode settings (`Ctrl+,`), search for `neovim executable`, and set the path to your Neovim installation, typically:
+
+    ```powershell
+    C:\Program Files\Neovim\bin\nvim.exe
+    ```
+
+  > Note: You can leave it blank if Neovim is already in your system's `PATH`.
+
+#### `settings.json` & `keybindings.json`
+
+- Add this folder's `vscode/settings.json` and `vscode/keybindings.json` files to your VSCode configuration.
+
+  - Open the Command Palette (`Ctrl+Shift+P`), type `Preferences: Open Settings (JSON)`, and press `Enter`.
+  - Copy the contents of `vscode/settings.json` into your VSCode `settings.json`.
+  - Similarly, open the Command Palette, type `Preferences: Open Keyboard Shortcuts (JSON)`, and press `Enter`.
+  - Copy the contents of `vscode/keybindings.json` into your VSCode `keybindings.json`.
