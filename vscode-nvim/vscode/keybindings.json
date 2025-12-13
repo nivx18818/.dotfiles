@@ -11,6 +11,12 @@
     "args": "\t",
     "when": "whichkeyVisible"
   },
+  {
+    // allow which-key calling
+    "key": "escape",
+    "command": "workbench.action.blur",
+    "when": "!editorFocus && inputFocus && (inSettingsEditor || inKeybindings || sideBarFocus || auxiliaryBarFocus)"
+  },
 
   // vscode-neovim
   {
@@ -33,6 +39,8 @@
     "command": "workbench.action.navigateRight",
     "when": "!terminalFocus && neovim.mode != 'cmdline'"
   },
+
+  // panel & terminal
   {
     "key": "ctrl+/",
     "command": "workbench.action.togglePanel"
@@ -48,12 +56,12 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+l",
+    "key": "ctrl+shift+l",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+h",
+    "key": "ctrl+shift+h",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
@@ -63,6 +71,32 @@
     "when": "terminalFocus"
   },
   {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b[D" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b[B" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b[A" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b[C" },
+    "when": "terminalFocus"
+  },
+
+  // chat
+  {
     "key": "ctrl+.",
     "command": "workbench.action.chat.openModePicker",
     "when": "inChat"
@@ -71,11 +105,5 @@
     "key": "ctrl+m",
     "command": "workbench.action.chat.openModelPicker",
     "when": "inChat"
-  },
-  {
-    // allow which-key calling
-    "key": "escape",
-    "command": "workbench.action.blur",
-    "when": "!editorFocus && inputFocus && (inSettingsEditor || inKeybindings || sideBarFocus || auxiliaryBarFocus)"
   }
 ]
