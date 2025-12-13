@@ -1,5 +1,14 @@
 local map = vim.keymap.set
 
+-- Better mark navigation
+map({ "n", "x", "o" }, "gm", function()
+  return "`" .. vim.fn.getcharstr()
+end, { desc = "Goto mark (exact)", expr = true, silent = true })
+
+map({ "n", "x", "o" }, "gM", function()
+  return "'" .. vim.fn.getcharstr()
+end, { desc = "Goto mark (line start)", expr = true, silent = true })
+
 -- Move Lines
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move Down" })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move Up" })
