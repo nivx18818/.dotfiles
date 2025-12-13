@@ -10,12 +10,12 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
+map("n", "n", "'Nn'[v:searchforward].'zv'", { desc = "Next Search Result", expr = true })
+map("x", "n", "'Nn'[v:searchforward]", { desc = "Next Search Result", expr = true })
+map("o", "n", "'Nn'[v:searchforward]", { desc = "Next Search Result", expr = true })
+map("n", "N", "'nN'[v:searchforward].'zv'", { desc = "Prev Search Result", expr = true })
+map("x", "N", "'nN'[v:searchforward]", { desc = "Prev Search Result", expr = true })
+map("o", "N", "'nN'[v:searchforward]", { desc = "Prev Search Result", expr = true })
 
 -- NORMAL MODE: keep cursor in place after search
 map("n", "*", "*N", { silent = true }) -- highlight word under cursor, stay on it
