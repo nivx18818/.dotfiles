@@ -13,10 +13,12 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -Colors @{ InlinePrediction  = "#767c9d" }
 
 # Keybindings
-Set-PSReadLineKeyHandler -Key "Ctrl+b" -Function BackwardWord
-Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function ForwardWord
-Set-PSReadLineKeyHandler -Key 'Ctrl+p' -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
+if ($Env:TERM_PROGRAM -ne "vscode") {
+    Set-PSReadLineKeyHandler -Key "Ctrl+b" -Function BackwardWord
+    Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function ForwardWord
+    Set-PSReadLineKeyHandler -Key 'Ctrl+p' -Function HistorySearchBackward
+    Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
+}
 
 # Better git clone
 function gclone {
